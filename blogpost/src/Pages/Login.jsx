@@ -13,16 +13,25 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-  import { postUserSignIn } from '../Redux/AuthReducer/action';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { postUserSignIn } from '../Redux/AuthReducer/action';
 import { USER_POST_SIGNIN_SUCESS } from '../Redux/AuthReducer/actionTypes';
+import { Link as RouterLink} from "react-router-dom";
   
   export const Login=()=> {
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const dispatch=useDispatch();
+    const navigate=useNavigate();
+    const {token,isAuth}=useSelector((state)=>state.AuthReducer);
+    console.log(token,isAuth,"tokennn..")
+
     
     const handleSignIn=()=>{
+       if(email===""||password===""){
+        alert("Please Fill All Data....")
+       }
         if(email&&password){
              let payload;
              payload={
@@ -33,33 +42,31 @@ import { USER_POST_SIGNIN_SUCESS } from '../Redux/AuthReducer/actionTypes';
                 console.log(res,"ress")
                 if(res===USER_POST_SIGNIN_SUCESS){
                     alert("congratulation Login sucessfully")
-                    // navigate("/login",{replace:true})
+                     navigate("/allbloglist",{replace:true})
                 }
                 else{
-                    alert("WRONG CREDENTIALS")
+                    alert("WRONG CREDENTIALS OR Not SIGNUP...........");
+                  
                 }
              });
         }
     }
     return (
-      <Flex
+      <Flex 
         minH={'100vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')}>
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+        bg={useColorModeValue('gray.50', 'gray.800')} bgGradient='linear(to-r, blue.400, green.500)'>
+        <Stack marginTop={"0.2%"} spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} maxH={"100%"} >
           <Stack align={'center'}>
-            <Heading fontSize={'4xl'}>Sign in to your account</Heading>
-            <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
-            </Text>
+            <Heading fontSize={'4xl'}>Sign SBBlog account</Heading>
           </Stack>
-          <Box
+          <Box  
             rounded={'lg'}
             bg={useColorModeValue('white', 'gray.700')}
             boxShadow={'lg'}
-            p={8}>
-            <Stack spacing={4}>
+            p={8}> 
+            <Stack spacing={4} >
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
                 <Input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
@@ -74,10 +81,10 @@ import { USER_POST_SIGNIN_SUCESS } from '../Redux/AuthReducer/actionTypes';
                   align={'start'}
                   justify={'space-between'}>
                   <Checkbox>Remember me</Checkbox>
-                  <Link color={'blue.400'}>Forgot password?</Link>
+                  <Link as={RouterLink} to={"/"} color={'blue.400'}>SIGNUP</Link>
                 </Stack>
                 <Button onClick={handleSignIn}
-                  bg={'blue.400'}
+                  bg={'green.600'}
                   color={'white'}
                   _hover={{
                     bg: 'blue.500',

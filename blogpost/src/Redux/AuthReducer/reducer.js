@@ -2,7 +2,8 @@ import * as Types from "./actionTypes";
 const intialState={
     isLoading:false,
     isError:false,
-    token:{}
+    token:{},
+    isAuth:false
 }
 
 export const reducer=(state=intialState,action)=>{
@@ -17,13 +18,15 @@ export const reducer=(state=intialState,action)=>{
             return{
                 ...state,
                 isLoading:false,
-                token:action.payload
+                token:action.payload,
+                isAuth:true
             }
         }
         case Types.USER_POST_SIGNIN_FAILURE:{
             return{
                 ...state,
-                isError:true
+                isError:true,
+                isAuth:false
 
             }
         }

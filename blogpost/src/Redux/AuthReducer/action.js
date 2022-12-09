@@ -18,8 +18,8 @@ export const postUserSignUp=(payload)=>(dispatch)=>{
 export const postUserSignIn=(payload)=>(dispatch)=>{
     dispatch({type:Types.USER_POST_SIGNIN_REQUEST})
     return axios.post("https://swatibersurdablogapp.up.railway.app/login",payload).then((res)=>{
-        console.log(res,"res")
-         dispatch({type:Types.USER_POST_SIGNIN_SUCESS,payload})
+        console.log(res.data.token,"res")
+         dispatch({type:Types.USER_POST_SIGNIN_SUCESS,payload:res.data.token})
          return Types.USER_POST_SIGNIN_SUCESS
      }).catch((err)=>{
          dispatch({type:Types.USER_POST_SIGNIN_FAILURE})
