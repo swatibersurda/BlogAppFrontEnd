@@ -48,7 +48,7 @@ useEffect(()=>{
         fontWeight={"800"}
         marginLeft={"2%"}
         marginTop="0%"
-        fontSize={"20px"}
+       fontSize={{ base: '16px', md: '18px', lg: '20px' }}
       >
         Filter By Category
       </Text>
@@ -67,19 +67,21 @@ useEffect(()=>{
             borderColor="green.600"
             onChange={handleFilter}
             defaultChecked={category.includes("food")}
+            fontSize={{ base: '12px', md: '18px', lg: '20px' }}
           >
             Food
           </Checkbox>
-          <Checkbox
-            size="md"
-            value={"nature"}
+          <Checkbox 
+             size="md"
+            value={"poet"}
             colorScheme="green"
             marginTop={"5%"}
             borderColor="green.600"
             onChange={handleFilter}
-            defaultChecked={category.includes("nature")}
+            defaultChecked={category.includes("poet")}
           >
-            Nature
+            
+            Poet
           </Checkbox>
           <Checkbox
             size="md"
@@ -109,7 +111,7 @@ useEffect(()=>{
         fontWeight={"800"}
         marginLeft={"2%"}
         marginTop="5%"
-        fontSize={"20px"}
+        fontSize={{ base: '16px', md: '18px', lg: '20px' }}
       >
         Sort By Alphabet
       </Text>
