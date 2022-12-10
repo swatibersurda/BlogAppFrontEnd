@@ -46,20 +46,20 @@ useEffect(()=>{
     <Box>
       <Text
         fontWeight={"800"}
-        marginLeft={"2%"}
+        marginLeft={"3%"}
         marginTop="0%"
        fontSize={{ base: '16px', md: '18px', lg: '20px' }}
       >
         Filter By Category
       </Text>
       <Box
-        marginLeft={"2%"}
+        marginLeft={"3%"}
         marginTop="8%"
         width="70%"
         height={"150px"}
         boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
       >
-        <Stack spacing={[1, 2]} direction={["column"]}>
+        <Stack padding={"2%"} spacing={[2, 2]} direction={["column"]}>
           <Checkbox
             size="md"
             value={"food"}
@@ -109,14 +109,14 @@ useEffect(()=>{
       </Box>
       <Text
         fontWeight={"800"}
-        marginLeft={"2%"}
+        marginLeft={"3%"}
         marginTop="5%"
         fontSize={{ base: '16px', md: '18px', lg: '20px' }}
       >
-        Sort By Alphabet
+        Sort By Title
       </Text>
-      <Box
-        marginLeft={"2%"}
+      <Box padding={"2%"} spacing={[2, 2]}
+        marginLeft={"3%"}
         marginTop="8%"
         width="70%"
         height={"150px"}
@@ -126,10 +126,10 @@ useEffect(()=>{
         <RadioGroup onChange={setSort} value={sort}>
           <Stack direction="column">
             <Radio value={"title"} borderColor="green.600" defaultChecked={sort==="title"}>
-              A to Z
+              asc
             </Radio>
             <Radio value={"-title"} borderColor="green.600" defaultChecked={sort==="-title"}>
-              Z to A
+              dsc
             </Radio>
           </Stack>
         </RadioGroup>
