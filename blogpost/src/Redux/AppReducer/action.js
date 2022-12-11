@@ -53,4 +53,20 @@ export const getBlogsByUserList = (id) => (dispatch) => {
     });
 };
 
+export const deleteUserBlog = (id) => (dispatch) => {
+  console.log(id,"params")
+  
+  return axios
+    .delete(`https://cyan-panicky-binturong.cyclic.app/blog/${id}`)
+    .then((res) => {
+      console.log(res.data, "boglisttttig");
+      dispatch({ type: Types.DELETE_USERBLOGLIST_SUCESS});
+      return Types.DELETE_USERBLOGLIST_SUCESS;
+    })
+    .catch((err) => {
+      dispatch({ type: Types.DELETE_USERBLOGLIST_FAILURE });
+      return Types.DELETE_USERBLOGLIST_FAILURE;
+    });
+};
+
 
