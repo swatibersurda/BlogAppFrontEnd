@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getBlogsByUserList } from "../Redux/AppReducer/action";
 
+import { Navbar } from "./NavBar";
+import { MyBlogCard } from "./MyBlogCards";
+
 export const MyBlog=()=>{
     const userId=useSelector((state)=>state.AuthReducer.tokenData.user._id);
     const userBlogs=useSelector((state)=>state.AppReducer.usersBlogss);
@@ -19,6 +22,14 @@ export const MyBlog=()=>{
 
 
     return(
-        <Box>i am blog</Box>
+        <Box>
+            <Navbar/>
+            <Box>
+            {userBlogs.length>0 && userBlogs.map((item)=>{
+            return <MyBlogCard item={item}/>
+        })}
+            </Box>
+           
+       </Box>
     )
 }
