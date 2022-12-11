@@ -13,7 +13,8 @@ import { Link } from 'react-router-dom';
 
 export const BlogCard=({item})=> {
   return (
-   <Box width={{base:"100%",lg:"80%"}} margin={"auto"} boxShadow= 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
+   <Box width={{base:"100%",lg:"80%"}} margin={"auto"} textAlign={"justify"}
+   boxShadow= 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
    borderRadius={"1%"}
    border={"1px solid green"} marginBottom={"9%"} marginTop={"2%"}>
     

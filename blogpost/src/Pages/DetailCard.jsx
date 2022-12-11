@@ -13,7 +13,8 @@ import {
   
   export const DetailCard=({item})=> {
     return (
-     <Box width={{base:"95%",md:"95%",lg:"95%",xl:'95%'}} maxH={"auto"} margin={"auto"} boxShadow= 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
+     <Box width={{base:"95%",md:"95%",lg:"95%",xl:'95%'}} textAlign={"justify"}
+      maxH={"auto"} margin={"auto"} boxShadow= 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
     
      border={"blue.400"} marginBottom={"9%"} marginTop={"2%"}>
       <Image width="100%" height={"250px"} 
