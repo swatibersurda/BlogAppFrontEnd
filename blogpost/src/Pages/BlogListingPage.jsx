@@ -23,7 +23,7 @@ export const BlogListingPage=()=>{
        
          dispatch(getAllBlogList(params))
      }
-     },[location.search])
+     },[location.search,searchParams,dispatch])
      
 
     return(

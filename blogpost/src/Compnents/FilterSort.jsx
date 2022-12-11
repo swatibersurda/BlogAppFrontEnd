@@ -115,7 +115,7 @@ useEffect(()=>{
       >
         Sort By Title
       </Text>
-      <Box padding={"2%"} spacing={[2, 2]}
+      <Box padding={"2%"} 
         marginLeft={"3%"}
         marginTop="8%"
         width="70%"
@@ -124,7 +124,7 @@ useEffect(()=>{
       >
         {/* <Text fontWeight={"800"} marginLeft={"2%"} marginTop="5%" fontSize={"20px"}>Filter By Category</Text> */}
         <RadioGroup onChange={setSort} value={sort}>
-          <Stack direction="column">
+          <Stack direction="column" >
             <Radio value={"title"} borderColor="green.600" defaultChecked={sort==="title"}>
               asc
             </Radio>

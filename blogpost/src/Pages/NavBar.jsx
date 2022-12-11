@@ -38,7 +38,7 @@ export const Navbar = () => {
           BlogList
         </RouterLink>
         <RouterLink to="/login">AddBlog</RouterLink>
-        <RouterLink to="/playzone">MyBlog</RouterLink>
+        <RouterLink to="/myblog">MyBlog</RouterLink>
         <RouterLink to="/dashboard">Dashboard</RouterLink>
       </HStack>
 

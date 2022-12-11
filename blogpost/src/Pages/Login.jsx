@@ -24,8 +24,8 @@ import { Link as RouterLink} from "react-router-dom";
     const [password,setPassword]=useState("");
     const dispatch=useDispatch();
     const navigate=useNavigate();
-    const {token,isAuth}=useSelector((state)=>state.AuthReducer);
-    console.log(token,isAuth,"tokennn..")
+    const {tokenData,isAuth}=useSelector((state)=>state.AuthReducer);
+    console.log(tokenData,isAuth,"tokennn..")
 
     
     const handleSignIn=()=>{

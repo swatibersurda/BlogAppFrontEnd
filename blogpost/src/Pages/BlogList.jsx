@@ -14,7 +14,7 @@ export const BlogList=()=>{
                     <FilterSort/>
                 </Box>
                 {/* box for displaying data after filteror sort */}
-                <Box border={"1px solid green"} 
+                <Box border={"1px solid none"} 
                  width={{ base: '50%', md: '64%', lg: '70%' }} marginTop="2%" >
                     <BlogListingPage/>
                 </Box>
