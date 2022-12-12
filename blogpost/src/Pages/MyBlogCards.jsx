@@ -52,7 +52,7 @@ import { DELETE_USERBLOGLIST_SUCESS, GET_USERBLOGLIST_SUCESS } from '../Redux/Ap
      borderRadius={"1%"} 
      border={"1px solid green"} marginBottom={"9%"} marginTop={"2%"} fontWeight="400" textAlign={"justify"}> 
       <Image width="100%" height={"250px"}
-       src={item.image}></Image>
+       src={item.image} borderTopStartRadius={"8px"}></Image>
        <Box>
        <Text marginLeft={"1.4%"}>Category</Text>
         <Heading marginLeft={"2%"}  color={"green.600"}
@@ -66,12 +66,20 @@ import { DELETE_USERBLOGLIST_SUCESS, GET_USERBLOGLIST_SUCESS } from '../Redux/Ap
          marginTop={"2%"} fontSize={"15px"}>{item.writter}</Heading>
        
         </Box>
-       <Box display={"flex"} border={"1px solid red"} width={"60%"}>
-       <Box onClick={(e)=>handleEdit(item._id)} border={"1px solid yellow"}
+
+
+       <Box display={"flex"} border={"1px solid none"} width={"60%"}>
+       <Box  border={"1px solid none"}
        width={"15%"} height={"30px"}> 
+       <Link to={`/editpage/${item._id}`}>
        <EditIcon width={"100%"} height={"100%"} color={"green.800"} />
+       </Link>
+       
        </Box>
-         <Box  marginLeft={"5%"} width={"14%"} height={"30px"} onClick={(e)=>handleDelete(item._id)} border={"1px solid yellow"} >
+
+
+
+         <Box  marginLeft={"5%"} width={"14%"} height={"30px"} onClick={(e)=>handleDelete(item._id)} border={"1px solid none"} >
             <DeleteIcon width={{base:"70%",md:"100%"}} height={"100%"} color={"green.800"} marginLeft={{base:"10%",md:"3%"}} marginBottom={{base:"4%",md:"3%"}}/>
             </Box>
         

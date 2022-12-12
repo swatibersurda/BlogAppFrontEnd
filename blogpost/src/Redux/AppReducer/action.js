@@ -70,3 +70,37 @@ export const deleteUserBlog = (id) => (dispatch) => {
 };
 
 
+export const updateUserBlog = (id,payload) => (dispatch) => {
+  // console.log(id,"params")
+  
+  return axios
+    .patch(`https://cyan-panicky-binturong.cyclic.app/blog/${id}`,payload)
+    .then((res) => {
+      console.log(res.data, "boglisttttig");
+      dispatch({ type: Types.UPDATE_USERBLOGLIST_SUCESS});
+      return Types.UPDATE_USERBLOGLIST_SUCESS;
+    })
+    .catch((err) => {
+      dispatch({ type: Types.UPDATE_USERBLOGLIST_FAILURE });
+      return Types.UPDATE_USERBLOGLIST_FAILURE;
+    });
+};
+
+
+export const postUserBlog = (payload) => (dispatch) => {
+  // console.log(id,"params")
+  
+  return axios
+    .post(`https://cyan-panicky-binturong.cyclic.app/blog`,payload)
+    .then((res) => {
+      console.log(res.data, "boglisttttig");
+      dispatch({ type: Types.POST_USERBLOGLIST_SUCESS});
+      return Types.POST_USERBLOGLIST_SUCESS;
+    })
+    .catch((err) => {
+      dispatch({ type: Types.POST_USERBLOGLIST_FAILURE });
+      return Types.POST_USERBLOGLIST_FAILURE;
+    });
+};
+
+

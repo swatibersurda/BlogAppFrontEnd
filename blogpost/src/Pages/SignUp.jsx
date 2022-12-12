@@ -20,7 +20,7 @@ import {
   USER_POST_SIGNUP_SUCESS,
 } from "../Redux/AuthReducer/actionTypes";
 import { useNavigate } from "react-router-dom";
-import { Link as RouterLink} from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { Navbar } from "./NavBar";
 
 export const SignUp = () => {
@@ -31,13 +31,13 @@ export const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // console.log(store,"storefdsgfd");
-  console.log(name,email,password);
+  console.log(name, email, password);
   const handleSignUp = () => {
-    console.log("jiii")
+    console.log("jiii");
     // will handle error handling if any details are not filled.
-     if(name===""||email===""||password===""){
-      alert("Please Fill All Data....")
-     }
+    if (name === "" || email === "" || password === "") {
+      alert("Please Fill All Data....");
+    }
     if (name && email && password) {
       let payload;
       payload = {
@@ -50,7 +50,7 @@ export const SignUp = () => {
         if (res === USER_POST_SIGNUP_SUCESS) {
           alert("congratulation user registed sucessfully");
           navigate("/login", { replace: true });
-        } 
+        }
         // will check for already registered user.
         else {
           alert("Already Registered User SignIn ");
@@ -59,80 +59,115 @@ export const SignUp = () => {
     }
   };
   return (
-    <>
-    <Navbar/>
-    <Flex 
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"} 
-      bg={useColorModeValue("gray.50", "gray.800")} 
-    >
-     
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-        <Stack align={"center"}>
-          <Heading fontSize={"4xl"}>SIGNUP SBBLOG Account</Heading>
-        </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
+    <Box width={"100%"} height="800px" border={"1px solid yellow"} bgGradient='linear(to-r, blue.400, green.500)' >
+      <Box width={"100%"} height="100%" border={"1px solid none"} marginTop="4%">
+        
+        <Box height={"60%"}
+          borderRadius={"8px"}
+          width={{ base: "70%", md: "50%", lg: "40%" }}
+          backgroundColor={"white"}
+          textAlign="center"
+          margin={"auto"}
+          border={"1px solid black"}
+          marginTop={"2%"}
+          boxShadow={
+            "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
+          }
         >
-          <Stack spacing={4}>
-            <FormControl id="name">
-              <FormLabel>Name</FormLabel>
-              <Input 
-                type="name"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              />
-            </FormControl>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input 
-                type="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-            </FormControl>
-            <FormControl id="password">
-              <FormLabel>Password</FormLabel>
-              <Input 
-                type="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-            </FormControl>
-            <Stack spacing={10}>
-              <Stack
-                direction={{ base: "column", sm: "row" }}
-                align={"start"}
-                justify={"space-between"}
-              >
-                <Checkbox>Remember me</Checkbox>
-                <Link as={RouterLink}  to={"/login"} color={'green.800'} fontWeight={"600"}>SIGNIN</Link>
-              </Stack>
-              <Button
-                onClick={handleSignUp}
-                bg={"green.600"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                Sign in
-              </Button>
-            </Stack>
-          </Stack>
+          <Heading
+            marginBottom={"2%"}
+            marginTop="6%"
+           
+            fontSize={"22px"}
+          >
+            SIGN UP HERE
+          </Heading>
+
+          {/* ffffff */}
+          <FormControl id="cat">
+            <FormLabel marginLeft={"3%"} marginBottom={"2%"} >
+              Name
+            </FormLabel>
+            <Input
+              marginLeft={"0%"}
+              width={"94%"}
+              height={"50px"}
+              type="cat"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+          </FormControl>
+
+          <FormControl id="read">
+            <FormLabel marginLeft={"3%"} marginBottom={"2%"} >
+              Email
+            </FormLabel>
+            <Input
+              marginLeft={"0%"}
+              width={"94%"}
+              height={"50px"}
+              type="read"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </FormControl>
+
+          
+          <FormControl id="metadata">
+            <FormLabel marginLeft={"3%"} marginBottom={"2%"} >
+              Password
+            </FormLabel>
+            <Input
+              marginLeft={"0%"}
+              width={"94%"}
+              height={"50px"}
+              type="metadata"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+          </FormControl>
+          <Stack marginTop="5%"
+                  direction={{ sm: 'row' }}
+                  align={'start'}
+                >
+                  <Checkbox marginLeft={"3%"}  marginRight={{base:"25%",lg:"45%"}}>Remember me</Checkbox>
+                  <Link as={RouterLink} to={"/login"} color={'blue.400'} >SIGNUP</Link>
+                </Stack>
+          <Button onClick={handleSignUp}
+              marginLeft={"0%"}
+              height={"50px"}
+              width={"94%"}
+              marginBottom={"2%"}
+              backgroundColor={"green.400"}
+              marginTop={"5%"}
+              
+              fontWeight={"700"}
+              
+            >
+              SUBMIT
+            </Button>
+
+          
+
+          </Box>
+
         </Box>
-      </Stack>
-    </Flex>
-    </>
-  );
-};
+     
+     
+       
+    </Box>
+   
+  
+    
+   
+  )
+      
+   
+
+}

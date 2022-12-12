@@ -24,9 +24,9 @@ import { Link as RouterLink} from "react-router-dom";
     const [password,setPassword]=useState("");
     const dispatch=useDispatch();
     const navigate=useNavigate();
-    const {tokenData,isAuth}=useSelector((state)=>state.AuthReducer);
-    console.log(tokenData,isAuth,"tokennn..")
-
+    // const {tokenData,isAuth}=useSelector((state)=>state.AuthReducer);
+    // console.log(tokenData,isAuth,"tokennn..")
+   console.log(email,password,"EMAIL")
     
     const handleSignIn=()=>{
        if(email===""||password===""){
@@ -52,49 +52,97 @@ import { Link as RouterLink} from "react-router-dom";
         }
     }
     return (
-      <Flex 
-        minH={'100vh'}
-        align={'center'}
-        justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')} bgGradient='linear(to-r, blue.400, green.500)'>
-        <Stack marginTop={"0.2%"} spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} maxH={"100%"} >
-          <Stack align={'center'}>
-            <Heading fontSize={'4xl'}>Sign SBBlog account</Heading>
-          </Stack>
-          <Box  
-            rounded={'lg'}
-            bg={useColorModeValue('white', 'gray.700')}
-            boxShadow={'lg'}
-            p={8}> 
-            <Stack spacing={4} >
-              <FormControl id="email">
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-              </FormControl>
-              <FormControl id="password">
-                <FormLabel>Password</FormLabel>
-                <Input  type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-              </FormControl>
-              <Stack spacing={10}>
-                <Stack
-                  direction={{ base: 'column', sm: 'row' }}
-                  align={'start'}
-                  justify={'space-between'}>
-                  <Checkbox>Remember me</Checkbox>
-                  <Link as={RouterLink} to={"/"} color={'blue.400'}>SIGNUP</Link>
-                </Stack>
-                <Button onClick={handleSignIn}
-                  bg={'green.600'}
-                  color={'white'}
-                  _hover={{
-                    bg: 'blue.500',
-                  }}>
-                  Sign in
-                </Button>
-              </Stack>
-            </Stack>
-          </Box>
-        </Stack>
-      </Flex>
-    );
+      <Box width={"100%"} height="800px" border={"1px solid yellow"} bgGradient='linear(to-r, blue.400, green.500)' >
+        <Box width={"100%"} height="90%" border={"1px solid none"} marginTop="6%">
+          
+          <Box height={"60%"}
+            borderRadius={"8px"}
+            width={{ base: "70%", md: "50%", lg: "40%" }}
+            backgroundColor={"white"}
+            textAlign="center"
+            margin={"auto"}
+            border={"1px solid black"}
+            marginTop={"2%"}
+            boxShadow={
+              "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
+            }
+          >
+            <Heading
+              marginBottom={"2%"}
+              marginTop="6%"
+             
+              fontSize={"22px"}
+            >
+              SIGN IN HERE
+            </Heading>
+  
+            {/* ffffff */}
+  
+  
+            <FormControl id="read">
+              <FormLabel marginLeft={"3%"} marginBottom={"2%"} >
+                Email
+              </FormLabel>
+              <Input
+                marginLeft={"0%"}
+                width={"94%"}
+                height={"50px"}
+                type="read"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </FormControl>
+  
+            
+            <FormControl id="metadata">
+              <FormLabel marginLeft={"3%"} marginBottom={"2%"} marginTop={"2%"} >
+                Password
+              </FormLabel>
+              <Input
+                marginLeft={"0%"}
+                width={"94%"}
+                height={"50px"}
+                type="metadata"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </FormControl>
+            <Stack marginTop="5%"
+                    direction={{ sm: 'row' }}
+                    align={'start'}
+                  >
+                    <Checkbox marginLeft={"3%"}  marginRight={{base:"25%",lg:"45%"}}>Remember me</Checkbox>
+                    <Link as={RouterLink} to={"/"} color={'blue.400'} >SIGNUP</Link>
+                  </Stack>
+            <Button onClick={handleSignIn}
+                marginLeft={"0%"}
+                height={"50px"}
+                width={"94%"}
+                marginBottom={"2%"}
+                backgroundColor={"green.400"}
+                marginTop={"9%"}
+                
+                fontWeight={"700"}
+                
+              >
+                SUBMIT
+              </Button>
+         </Box>
+      </Box>
+       
+    </Box>
+     
+    
+      
+     
+    )
+        
+     
+  
   }
+  
+     
