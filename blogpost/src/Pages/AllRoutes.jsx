@@ -6,7 +6,8 @@ import { EditPage } from "./EditPage"
 import { Login } from "./Login"
 import { MyBlog } from "./MyBlog"
 import { PostBlogs } from "./PostBlogs"
-import { SignUp } from "./SignUp"
+import { SignUp } from "./SignUp";
+import { ReqAuth } from "./ReqAuth"
 
 export const AllRoutes=()=>{
     return(
@@ -15,9 +16,19 @@ export const AllRoutes=()=>{
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/allbloglist" element={<BlogList/>}></Route>
             <Route path="/detailblog/:id" element={<DetailBlog/>}></Route>
-            <Route path="/myblog" element={<MyBlog/>}></Route>
+            <Route path="/myblog" element={
+                <ReqAuth>
+                     <MyBlog/>
+                </ReqAuth>
+           
+            }></Route>
             <Route path="editpage/:id" element={<EditPage/>}></Route>
-            <Route path="/postblogs" element={<PostBlogs/>}></Route>
+            <Route path="/postblogs" element={
+                <ReqAuth>
+                    <PostBlogs/>
+                </ReqAuth>
+            
+            }></Route>
             
 
         </Routes>

@@ -60,7 +60,7 @@ export const EditPage = () => {
             <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
               Categorey
             </FormLabel>
-            <Input
+            <Input placeholder="enter only Food,Entertainment,Animal"
               marginLeft={"0%"}
               width={"94%"}
               height={"35px"}
@@ -163,7 +163,7 @@ export const EditPage = () => {
               width={"94%"}
         value={content}
         onChange={(e)=>setContent(e.target.value)}
-        placeholder='Here is a sample placeholder'
+        placeholder='100 words limit'
         size='sm'>
           
         </Textarea>

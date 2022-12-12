@@ -14,7 +14,7 @@ import {
   } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { postUserSignIn } from '../Redux/AuthReducer/action';
 import { USER_POST_SIGNIN_SUCESS } from '../Redux/AuthReducer/actionTypes';
 import { Link as RouterLink} from "react-router-dom";
@@ -27,6 +27,8 @@ import { Link as RouterLink} from "react-router-dom";
     // const {tokenData,isAuth}=useSelector((state)=>state.AuthReducer);
     // console.log(tokenData,isAuth,"tokennn..")
    console.log(email,password,"EMAIL")
+   const location=useLocation();
+   const comingfrom=location.state?.from?.pathname || "/";
     
     const handleSignIn=()=>{
        if(email===""||password===""){
@@ -42,7 +44,7 @@ import { Link as RouterLink} from "react-router-dom";
                 console.log(res,"ress")
                 if(res===USER_POST_SIGNIN_SUCESS){
                     alert("congratulation Login sucessfully")
-                     navigate("/allbloglist",{replace:true})
+                     navigate(comingfrom,{replace:true})
                 }
                 else{
                     alert("WRONG CREDENTIALS OR Not SIGNUP...........");
@@ -52,7 +54,7 @@ import { Link as RouterLink} from "react-router-dom";
         }
     }
     return (
-      <Box width={"100%"} height="800px" border={"1px solid yellow"} bgGradient='linear(to-r, blue.400, green.500)' >
+      <Box width={"100%"} height="800px" border={"1px solid none"}  >
         <Box width={"100%"} height="90%" border={"1px solid none"} marginTop="6%">
           
           <Box height={"60%"}
@@ -123,7 +125,7 @@ import { Link as RouterLink} from "react-router-dom";
                 height={"50px"}
                 width={"94%"}
                 marginBottom={"2%"}
-                backgroundColor={"green.400"}
+                backgroundColor={"blue.400"}
                 marginTop={"9%"}
                 
                 fontWeight={"700"}

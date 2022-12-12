@@ -27,9 +27,15 @@ import {
          marginTop={"1%"} fontSize={"15px"}>{item.category}</Heading>
         <Text fontWeight={"400"} marginLeft={"2%"} textAlign={"justify-all"}>{item.content}</Text>
         
-        <Heading marginLeft={"80%"}
+        <Heading marginLeft={"70%"}
          marginTop={"1%"} color={"blue.400"} fontFamily={"cursive"} 
          fontSize={"15px"}>Author:{item.writter}</Heading>
+
+        <Heading marginLeft={"70%"}
+         marginTop={"1%"} color={"green.600"} fontFamily={"cursive"} 
+         fontSize={"15px"}>CreatedAt:{item.createdAt}</Heading>
+        
+        
         
        </Box>
      </Box>
