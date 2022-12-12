@@ -30,6 +30,13 @@ export const reducer=(state=intialState,action)=>{
 
             }
         }
+        case Types.LOGOUT_USER:{
+            return{
+                ...state,
+                tokenData:{},
+                isAuth:false
+            }
+        }
         default:
             return state;
     }

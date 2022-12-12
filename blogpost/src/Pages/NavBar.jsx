@@ -1,13 +1,27 @@
 import { HStack, Text, Image, color, Button } from "@chakra-ui/react";
 import React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Login } from "./Login";
+import { logOut } from "../Redux/AuthReducer/action";
 
 export const Navbar = () => {
 
   const {tokenData,isAuth}=useSelector((state)=>state.AuthReducer);
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
+  console.log(isAuth,"isAuth")
+    
+    const handleLog=()=>{
+      if(isAuth){
+        dispatch(logOut())
+      }
+      else{
+        navigate("/login",{replace:true})
+      }
+    }
+  
   return (
     <HStack
       color={"white"}
@@ -27,7 +41,7 @@ export const Navbar = () => {
       >
         <Text fontSize={"18px"}>SBBLOG</Text>
       </Box>
-
+       
       <HStack
         float={"right"}
         width={{ base: "80%", md: "50%", lg: "40%" }}
@@ -43,57 +57,12 @@ export const Navbar = () => {
         </RouterLink>
         <RouterLink to="/postblogs">AddBlog</RouterLink>
         <RouterLink to="/myblog">MyBlogs</RouterLink>
-        {/* <RouterLink to="">LogIn</RouterLink> */}
-        <Box>{isAuth ?  <Button  
-      backgroundColor={"white"}
-    height="120px" border={"none"} color={"yellow"}>LOGOUT</Button>:<Login/>}
+      
+    <Button  onClick={handleLog} backgroundColor={"blue.400"} color="white">{isAuth?"LogOut":"Login"}</Button>
 
- </Box>
       </HStack>
 
-      {/* <RouterLink to="/allbloglist" color={'white.800'} padding>BlogList</RouterLink>
-            <RouterLink to="/login">AddBlog</RouterLink>
-            <RouterLink to="/playzone">MyBlog</RouterLink> */}
-      {/* <RouterLink to="/dashboard">Dashboard</RouterLink> */}
+     
     </HStack>
   );
 };
-// const handleLogOut=()=>{
-//   dispatch(loginOutData()).then((res)=>{
-//     if(res===LOGOUT_SUCESS)
-//     {
-//          navigate("/",{replace:true})
-//     }
-//   })
-// }
-
-//   <Box>{isAuth && namee? <Button  onClick={handleLogOut}
-// backgroundColor={"rgb(53, 176, 225)"}
-// height="20px" border={"none"} color={"white"} >LOGOUT</Button> 
-
-// :<Login/>}
-
-// </Box>
-
-/* <nav className="navBar">
-<Link to="/">Login</Link>
-<Link to="/pollpage">PollePage</Link>
-<Link to="/resultpage">ResultPage</Link>
-</nav> 
-.navBar {
-  /* background-image:linear-gradient(to right,crimson,purple,green); */
-//   background-color: #4267b2;
-//   overflow: hidden;
-//   height: 50px;
-// }
-
-// .navBar a {
-//   padding: 14px 16px;
-//   text-decoration: none;
-//   text-align: center;
-//   color: white;
-//   font-size: 15px;
-//   display: block;
-//   float: left;
-// }
-// }

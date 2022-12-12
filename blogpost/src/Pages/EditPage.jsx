@@ -31,7 +31,7 @@ export const EditPage = () => {
   console.log(category, min_read, meta_data, title, writter, content, image);
 
   return (
-    <Box height="800px" backgroundColor={"green.500"}>
+    <Box height="800px" >
       <Navbar />
       <Box>
         <Box

@@ -28,4 +28,10 @@ export const postUserSignIn=(payload)=>(dispatch)=>{
 }
 
 
+export const logOut=()=>(dispatch)=>{
+    dispatch({type:Types.LOGOUT_USER})
+    return Types.LOGOUT_USER;
+}
+
+
 

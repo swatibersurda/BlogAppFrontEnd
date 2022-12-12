@@ -59,7 +59,7 @@ export const SignUp = () => {
     }
   };
   return (
-    <Box width={"100%"} height="800px" border={"1px solid yellow"} bgGradient='linear(to-r, blue.400, green.500)' >
+    <Box width={"100%"} height="800px" border={"1px solid yellow"} backgroundColor={"green.600"} >
       <Box width={"100%"} height="100%" border={"1px solid none"} marginTop="4%">
         
         <Box height={"60%"}
