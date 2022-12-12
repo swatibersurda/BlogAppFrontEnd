@@ -59,7 +59,7 @@ export const SignUp = () => {
     }
   };
   return (
-    <Box width={"100%"} height="800px" border={"1px solid yellow"} backgroundColor={"green.600"} >
+    <Box width={"100%"} height="800px" border={"1px solid none"}>
       <Box width={"100%"} height="100%" border={"1px solid none"} marginTop="4%">
         
         <Box height={"60%"}
@@ -137,14 +137,14 @@ export const SignUp = () => {
                   align={'start'}
                 >
                   <Checkbox marginLeft={"3%"}  marginRight={{base:"25%",lg:"45%"}}>Remember me</Checkbox>
-                  <Link as={RouterLink} to={"/login"} color={'blue.400'} >SIGNUP</Link>
+                  <Link as={RouterLink} to={"/login"} color={'blue.400'} >SIGNIN</Link>
                 </Stack>
           <Button onClick={handleSignUp}
               marginLeft={"0%"}
               height={"50px"}
               width={"94%"}
               marginBottom={"2%"}
-              backgroundColor={"green.400"}
+              backgroundColor={"blue.400"}
               marginTop={"5%"}
               
               fontWeight={"700"}

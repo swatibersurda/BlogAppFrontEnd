@@ -52,13 +52,13 @@ export const Navbar = () => {
         p={1}
         overflow="hidden"
       >
-        <RouterLink to="/allbloglist" color={"white.800"} padding>
+        <RouterLink to="/" color={"white.800"} padding>
           AllBlogs
         </RouterLink>
         <RouterLink to="/postblogs">AddBlog</RouterLink>
         <RouterLink to="/myblog">MyBlogs</RouterLink>
       
-    <Button  onClick={handleLog} backgroundColor={"blue.400"} color="white">{isAuth?"LogOut":"Login"}</Button>
+    <Button _hover={{colr:"red"}}  onClick={handleLog} backgroundColor={"transparent"} color="white">{isAuth?"LogOut":"Login"}</Button>
 
       </HStack>
 

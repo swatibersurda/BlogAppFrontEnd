@@ -27,8 +27,7 @@ export const BlogCard=({item})=> {
        marginTop={"1%"} fontSize={"15px"}>{item.category}</Heading>
       <Text fontFamily={"serif"} fontWeight={"700"} marginLeft={"2%"} marginRight="2%">{item.meta_data}</Text>
       <Text color={"blue.400"} fontFamily={"cursive"} fontWeight={"700"} marginLeft={"80%"} marginBottom="2%">{item.min_read}</Text>
-      {/* <Heading marginLeft={"60%"}
-       marginTop={"2%"} fontSize={"15px"}>{item.writter}</Heading> */}
+     
       
      </Box>
      </Link>

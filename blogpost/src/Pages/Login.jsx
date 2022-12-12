@@ -44,7 +44,7 @@ import { Link as RouterLink} from "react-router-dom";
                 console.log(res,"ress")
                 if(res===USER_POST_SIGNIN_SUCESS){
                     alert("congratulation Login sucessfully")
-                     navigate(comingfrom,{replace:true})
+                     navigate("/",{replace:true})
                 }
                 else{
                     alert("WRONG CREDENTIALS OR Not SIGNUP...........");
@@ -118,7 +118,7 @@ import { Link as RouterLink} from "react-router-dom";
                     align={'start'}
                   >
                     <Checkbox marginLeft={"3%"}  marginRight={{base:"25%",lg:"45%"}}>Remember me</Checkbox>
-                    <Link as={RouterLink} to={"/"} color={'blue.400'} >SIGNUP</Link>
+                    <Link as={RouterLink} to={"/signup"} color={'blue.400'} >SIGNUP</Link>
                   </Stack>
             <Button onClick={handleSignIn}
                 marginLeft={"0%"}

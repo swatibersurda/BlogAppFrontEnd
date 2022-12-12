@@ -12,9 +12,9 @@ import { ReqAuth } from "./ReqAuth"
 export const AllRoutes=()=>{
     return(
         <Routes>
-            <Route path="/" element={<SignUp/>}></Route>
+            <Route path="/signup" element={<SignUp/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
-            <Route path="/allbloglist" element={<BlogList/>}></Route>
+            <Route path="/" element={<BlogList/>}></Route>
             <Route path="/detailblog/:id" element={<DetailBlog/>}></Route>
             <Route path="/myblog" element={
                 <ReqAuth>
