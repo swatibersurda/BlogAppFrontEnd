@@ -54,8 +54,8 @@ import { Link as RouterLink} from "react-router-dom";
         }
     }
     return (
-      <Box width={"100%"} height="800px" border={"1px solid none"}  >
-        <Box width={"100%"} height="90%" border={"1px solid none"} marginTop="6%">
+      <Box width={"100%"} height="800px" border={"1px solid none"}>
+        <Box width={"100%"} height="90%" border={"1px solid none"} marginTop="6%" >
           
           <Box height={"60%"}
             borderRadius={"8px"}

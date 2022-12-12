@@ -59,8 +59,8 @@ export const SignUp = () => {
     }
   };
   return (
-    <Box width={"100%"} height="800px" border={"1px solid none"}>
-      <Box width={"100%"} height="100%" border={"1px solid none"} marginTop="4%">
+    <Box width={"100%"} height="1800px" border={"1px solid transparent"} backgroundImage={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXsIaiteBYaA4Z2E0ucRvvGWPqV6Bspm7Yw&usqp=CAU"} backgroundSize="contain">
+      <Box width={"100%"} height="45%" border={"1px solid none"} marginTop="4%">
         
         <Box height={"60%"}
           borderRadius={"8px"}
@@ -140,14 +140,16 @@ export const SignUp = () => {
                   <Link as={RouterLink} to={"/login"} color={'blue.400'} >SIGNIN</Link>
                 </Stack>
           <Button onClick={handleSignUp}
+            
               marginLeft={"0%"}
               height={"50px"}
               width={"94%"}
+              fontSize={"20px"}
               marginBottom={"2%"}
               backgroundColor={"blue.400"}
               marginTop={"5%"}
-              
-              fontWeight={"700"}
+              color="white"
+              fontWeight={"800"}
               
             >
               SUBMIT
