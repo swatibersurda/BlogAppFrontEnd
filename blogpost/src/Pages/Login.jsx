@@ -44,7 +44,7 @@ import { Link as RouterLink} from "react-router-dom";
                 console.log(res,"ress")
                 if(res===USER_POST_SIGNIN_SUCESS){
                     alert("congratulation Login sucessfully")
-                     navigate("/",{replace:true})
+                     navigate(comingfrom,{replace:true})
                 }
                 else{
                     alert("WRONG CREDENTIALS OR Not SIGNUP...........");

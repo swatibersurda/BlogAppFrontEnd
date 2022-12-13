@@ -6,7 +6,7 @@ export const ReqAuth=({children})=>{
     const location=useLocation();
     if(!isAuth)
     {
-     return   <Navigate to={"/signup"} replace={true} state={{from:location}}/>
+     return   <Navigate to={"/login"} replace={true} state={{from:location}}/>
     }
     return children;
 }

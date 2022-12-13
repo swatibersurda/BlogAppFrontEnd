@@ -59,10 +59,18 @@ export const SignUp = () => {
     }
   };
   return (
-    <Box width={"100%"} height="1800px" border={"1px solid transparent"} backgroundImage={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXsIaiteBYaA4Z2E0ucRvvGWPqV6Bspm7Yw&usqp=CAU"} backgroundSize="contain">
-      <Box width={"100%"} height="45%" border={"1px solid none"} marginTop="4%">
-        
-        <Box height={"60%"}
+    <Box
+      width={"100%"}
+      height="1800px"
+      border={"2px solid transparent"}
+      backgroundImage={
+        "https://cdn.pixabay.com/photo/2016/03/22/15/29/blue-1273089_1280.jpg"
+      }
+      backgroundSize="contain"
+    >
+      <Box width={"100%"} height="0%" border={"2px solid none"} marginTop="4%">
+        <Box
+          height={"60%"}
           borderRadius={"8px"}
           width={{ base: "70%", md: "50%", lg: "40%" }}
           backgroundColor={"white"}
@@ -77,20 +85,20 @@ export const SignUp = () => {
           <Heading
             marginBottom={"2%"}
             marginTop="6%"
-           
-            fontSize={"22px"}
+            fontSize={{ base: "22px", lg: "25" }}
           >
             SIGN UP HERE
           </Heading>
 
           {/* ffffff */}
-          <FormControl id="cat">
-            <FormLabel marginLeft={"3%"} marginBottom={"2%"} >
+          <FormControl id="cat" marginBottom={"2%"}>
+            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"}>
               Name
             </FormLabel>
             <Input
               marginLeft={"0%"}
-              width={"94%"}
+              borderColor="black"
+              width={"90%"}
               height={"50px"}
               type="cat"
               value={name}
@@ -100,13 +108,14 @@ export const SignUp = () => {
             />
           </FormControl>
 
-          <FormControl id="read">
-            <FormLabel marginLeft={"3%"} marginBottom={"2%"} >
+          <FormControl id="read" marginBottom={"2%"}>
+            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"}>
               Email
             </FormLabel>
             <Input
               marginLeft={"0%"}
-              width={"94%"}
+              borderColor="black"
+              width={"90%"}
               height={"50px"}
               type="read"
               value={email}
@@ -116,14 +125,14 @@ export const SignUp = () => {
             />
           </FormControl>
 
-          
-          <FormControl id="metadata">
-            <FormLabel marginLeft={"3%"} marginBottom={"2%"} >
+          <FormControl id="metadata" marginBottom={"2%"}>
+            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"}>
               Password
             </FormLabel>
             <Input
               marginLeft={"0%"}
-              width={"94%"}
+              borderColor="black"
+              width={"90%"}
               height={"50px"}
               type="metadata"
               value={password}
@@ -132,44 +141,41 @@ export const SignUp = () => {
               }}
             />
           </FormControl>
-          <Stack marginTop="5%"
-                  direction={{ sm: 'row' }}
-                  align={'start'}
-                >
-                  <Checkbox marginLeft={"3%"}  marginRight={{base:"25%",lg:"45%"}}>Remember me</Checkbox>
-                  <Link as={RouterLink} to={"/login"} color={'blue.400'} >SIGNIN</Link>
-                </Stack>
-          <Button onClick={handleSignUp}
-            
-              marginLeft={"0%"}
-              height={"50px"}
-              width={"94%"}
-              fontSize={"20px"}
-              marginBottom={"2%"}
-              backgroundColor={"blue.400"}
-              marginTop={"5%"}
-              color="white"
-              fontWeight={"800"}
-              
+          <Stack marginTop="5%" direction={{ sm: "row" }} align={"start"}>
+            <Text
+              marginLeft={"5%"}
+              fontWeight={"600"}
+              marginRight={{ base: "25%", lg: "45%" }}
             >
-              SUBMIT
-            </Button>
-
-          
-
-          </Box>
-
+              Already a Users?
+            </Text>
+            <Link
+              as={RouterLink}
+              to={"/login"}
+              fontWeight="700"
+              color={"blue.400"}
+            >
+              SIGNIN
+            </Link>
+          </Stack>
+          <Button
+            onClick={handleSignUp}
+            marginLeft={"0%"}
+            height={"50px"}
+            width={"94%"}
+            fontSize={"20px"}
+            marginBottom={"2%"}
+            backgroundColor="green.600"
+            // bgGradient="linear(to-r, blue.400, green.500)"
+            marginTop={"10%"}
+            color="white"
+            fontWeight={"800"}
+            cursor={"pointer"}
+          >
+            SUBMIT
+          </Button>
         </Box>
-     
-     
-       
+      </Box>
     </Box>
-   
-  
-    
-   
-  )
-      
-   
-
-}
+  );
+};
