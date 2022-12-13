@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useSearchParams } from "react-router-dom"
 import { getAllBlogList } from "../Redux/AppReducer/action"
 import { BlogCard } from "./BlogCard"
+import { BloggCard } from "./BloggCard"
 
 export const BlogListingPage=()=>{
      const blogs=useSelector((state)=>state.AppReducer.allBlog);
@@ -13,7 +14,7 @@ export const BlogListingPage=()=>{
     const [searchParams,setSearchParams]=useSearchParams();
     const location=useLocation();
      useEffect(()=>{
-     if(blogs.length===0 ||location){
+     if(blogs.length===0 ||location.search){
         
           let  params={
                 category:searchParams.getAll("category"),
@@ -28,7 +29,9 @@ export const BlogListingPage=()=>{
 
     return(
         <Box>{blogs.length>0&&blogs.map((item)=>{
-            return <BlogCard item={item}/>
+            // return <BlogCard item={item}/>
+            return <BloggCard item={item}/>
+
         })}</Box>
     )
 }

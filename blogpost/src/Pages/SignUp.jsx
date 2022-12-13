@@ -62,7 +62,7 @@ export const SignUp = () => {
     <Box
       width={"100%"}
       height="1800px"
-      border={"2px solid transparent"}
+      border={"2px solid transparent"}  
       backgroundImage={
         "https://cdn.pixabay.com/photo/2016/03/22/15/29/blue-1273089_1280.jpg"
       }
@@ -73,10 +73,10 @@ export const SignUp = () => {
           height={"60%"}
           borderRadius={"8px"}
           width={{ base: "70%", md: "50%", lg: "40%" }}
-          backgroundColor={"white"}
+          backgroundColor={"none"}
           textAlign="center"
           margin={"auto"}
-          border={"1px solid black"}
+          border={"2px solid transparent"}
           marginTop={"2%"}
           boxShadow={
             "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
@@ -86,16 +86,17 @@ export const SignUp = () => {
             marginBottom={"2%"}
             marginTop="6%"
             fontSize={{ base: "22px", lg: "25" }}
+            color={"green.600"}
           >
             SIGN UP HERE
           </Heading>
 
           {/* ffffff */}
           <FormControl id="cat" marginBottom={"2%"}>
-            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"}>
+            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"} color="black">
               Name
             </FormLabel>
-            <Input
+            <Input  border={"3px solid black"} fontSize={"20px"}
               marginLeft={"0%"}
               borderColor="black"
               width={"90%"}
@@ -109,10 +110,11 @@ export const SignUp = () => {
           </FormControl>
 
           <FormControl id="read" marginBottom={"2%"}>
-            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"}>
+            <FormLabel marginLeft={"5%"} marginBottom={"2%"} color="black" 
+            fontSize={"20px"}>
               Email
             </FormLabel>
-            <Input
+            <Input  border={"3px solid black"} fontSize={"20px"}
               marginLeft={"0%"}
               borderColor="black"
               width={"90%"}
@@ -126,10 +128,10 @@ export const SignUp = () => {
           </FormControl>
 
           <FormControl id="metadata" marginBottom={"2%"}>
-            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"}>
+            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"} color="black">
               Password
             </FormLabel>
-            <Input
+            <Input border={"3px solid black"} fontSize={"20px"}
               marginLeft={"0%"}
               borderColor="black"
               width={"90%"}
@@ -150,10 +152,11 @@ export const SignUp = () => {
               Already a Users?
             </Text>
             <Link
+            fontSize={"19px"}
               as={RouterLink}
               to={"/login"}
               fontWeight="700"
-              color={"blue.400"}
+              color="black"
             >
               SIGNIN
             </Link>
