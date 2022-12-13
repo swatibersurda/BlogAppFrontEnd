@@ -2,12 +2,11 @@ import { Route, Routes } from "react-router-dom"
 import { BlogList } from "./BlogList"
 import { DetailBlog } from "./DetailBlog"
 import { EditPage } from "./EditPage"
-
 import { Login } from "./Login"
 import { MyBlog } from "./MyBlog"
 import { PostBlogs } from "./PostBlogs"
 import { SignUp } from "./SignUp";
-import { ReqAuth } from "./ReqAuth"
+import { ReqAuth } from "./ReqAuth";
 
 export const AllRoutes=()=>{
     return(

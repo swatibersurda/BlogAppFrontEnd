@@ -42,14 +42,14 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
   const HandlePost=()=>{
    if(category&&min_read&&meta_data&&title&&writter&&content,image&&user_id){
       let payload={
-        category
-        ,min_read,
-        meta_data,
-        title,
-        writter,
-        content,
-        image,
-        user_id
+        category:category
+        ,min_read:min_read,
+        meta_data:meta_data,
+        title:title,
+        writter:writter,
+        content:content,
+        image:image,
+        user_id:user_id
        
        
       }
@@ -62,10 +62,10 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
             if(res===GET_ALLBLOGLIST_SUCESS){
               
               dispatch(getBlogsByUserList(user_id)).then((res)=>{
-                console.log(res,"res")
-                if(res===GET_USERBLOGLIST_SUCESS){
+                // console.log(res,"res")
+                // if(res===GET_USERBLOGLIST_SUCESS){
                   navigate("/",{replace:true})
-                }
+                // }
               })
             }
           })

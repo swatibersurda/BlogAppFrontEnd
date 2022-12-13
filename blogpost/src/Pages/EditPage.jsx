@@ -20,7 +20,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getAllBlogList, getBlogsByUserList, updateUserBlog } from "../Redux/AppReducer/action";
 import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUCESS} from "../Redux/AppReducer/actionType";
 import { Navbar } from "./NavBar";
-
 export const EditPage = () => {
   const { id } = useParams();
   const dispatch=useDispatch();
@@ -121,8 +120,6 @@ export const EditPage = () => {
               }}
             />
           </FormControl>
-
-          
           <FormControl id="metadata">
             <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
               Mata_Data
