@@ -15,12 +15,15 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { updateUserBlog } from "../Redux/AppReducer/action";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { getAllBlogList, getBlogsByUserList, updateUserBlog } from "../Redux/AppReducer/action";
+import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUCESS} from "../Redux/AppReducer/actionType";
 import { Navbar } from "./NavBar";
 
 export const EditPage = () => {
   const { id } = useParams();
+  const dispatch=useDispatch();
   const [category, setCategory] = useState("");
   const [min_read, setminread] = useState("");
   const [meta_data, setmetaData] = useState("");
@@ -28,7 +31,38 @@ export const EditPage = () => {
   const [writter, setWritter] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
+  const navigate=useNavigate();
   console.log(category, min_read, meta_data, title, writter, content, image);
+  // this user needs because after post we will fetch all blogs and login user blog fectch
+  const userId=useSelector((state)=>state.AuthReducer.tokenData.user._id);
+
+        const HandlePatch=()=>{
+          console.log("inside","hhdv")
+          if(category&&min_read&&meta_data&&title&&writter&&content&&image&&id){
+            let payload;
+            payload={
+              category,min_read,meta_data,title,writter,content,image
+            } 
+           dispatch(updateUserBlog(payload,id)).then((res)=>{
+            console.log(res,"res here")
+            if(res===UPDATE_USERBLOGLIST_SUCESS){
+              dispatch(getAllBlogList()).then((res)=>{
+                if(res===GET_ALLBLOGLIST_SUCESS){
+                  dispatch(getBlogsByUserList(userId)).then((res)=>{
+                    if(res===GET_USERBLOGLIST_SUCESS){
+                      navigate("/",{replace:true})
+                    }
+                  })
+                }
+              })
+            }
+           })
+      }
+        }
+       
+          
+    
+  
 
   return (
     <Box height="800px" >
@@ -167,7 +201,8 @@ export const EditPage = () => {
         size='sm'>
           
         </Textarea>
-          <Button color={"white"}
+          <Button onClick={HandlePatch}
+           color={"white"}
             marginLeft={"0%"}
             width={"94%"}
             marginBottom={"2%"}

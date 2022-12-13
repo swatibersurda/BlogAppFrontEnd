@@ -15,9 +15,12 @@ import {
   } from "@chakra-ui/react";
   import { useState } from "react";
   import { useEffect } from "react";
-  import { useParams } from "react-router-dom";
-  import { updateUserBlog } from "../Redux/AppReducer/action";
+import { useDispatch, useSelector } from "react-redux";
+  import { useNavigate, useParams } from "react-router-dom";
+  
   import { Navbar } from "./NavBar";
+  import { getAllBlogList, getBlogsByUserList, postUserBlog, updateUserBlog } from "../Redux/AppReducer/action";
+import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUCESS, POST_USERBLOGLIST_SUCESS} from "../Redux/AppReducer/actionType";
   
   export const PostBlogs = () => {
     const { id } = useParams();
@@ -28,8 +31,49 @@ import {
     const [writter, setWritter] = useState("");
     const [content, setContent] = useState("");
     const [image, setImage] = useState("");
-    console.log(category, min_read, meta_data, title, writter, content, image);
-  
+    const navigate=useNavigate();
+    const dispatch=useDispatch();
+    console.log(category, min_read, meta_data, title, writter, content, image,"ll");
+    const user_id=useSelector((state)=>state.AuthReducer.tokenData.user._id);
+    const token=useSelector((state)=>state.AuthReducer.tokenData)
+    console.log(token,user_id,"logedin user");
+    
+  //  
+  const HandlePost=()=>{
+   if(category&&min_read&&meta_data&&title&&writter&&content,image&&user_id){
+      let payload={
+        category
+        ,min_read,
+        meta_data,
+        title,
+        writter,
+        content,
+        image,
+        user_id
+       
+       
+      }
+      dispatch(postUserBlog(payload)).then((res)=>{
+        console.log("respostt..",res)
+        if(res===POST_USERBLOGLIST_SUCESS){
+          dispatch(getAllBlogList()).then((res)=>{
+            console.log("all suces",res)
+
+            if(res===GET_ALLBLOGLIST_SUCESS){
+              
+              dispatch(getBlogsByUserList(user_id)).then((res)=>{
+                console.log(res,"res")
+                if(res===GET_USERBLOGLIST_SUCESS){
+                  navigate("/",{replace:true})
+                }
+              })
+            }
+          })
+        }
+      })
+   }
+  }
+    // 
     return (
       <Box height="800px" >
         <Navbar />
@@ -167,7 +211,7 @@ import {
           size='sm'>
             
           </Textarea>
-            <Button
+            <Button onClick={HandlePost}
               marginLeft={"0%"}
               width={"94%"}
               marginBottom={"2%"}

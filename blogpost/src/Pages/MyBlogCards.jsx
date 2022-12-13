@@ -37,7 +37,7 @@ import { DELETE_USERBLOGLIST_SUCESS, GET_USERBLOGLIST_SUCESS } from '../Redux/Ap
                     }
                 })
                 
-                navigate("/allbloglist",{replace:true})
+                navigate("/",{replace:true})
                 
             }
         })
