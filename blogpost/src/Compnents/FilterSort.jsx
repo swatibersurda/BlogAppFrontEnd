@@ -17,18 +17,23 @@ export const FilterSort = () => {
   const urlSort = searchParams.get("sort");
   const [category, setCategory] = useState(urlCategory || []);
   const [sort, setSort] = useState(urlSort || "");
+  console.log(category,"cattt")
 
-  const handleFilter = (e) => {
-    var option = e.target.value;
-    let newCategory = [...category];
-    console.log(newCategory, "newcat");
-    if (category.includes(option)) {
-      newCategory.splice(newCategory.indexOf(option), 1);
-    } else {
-      newCategory.push(option);
+ const handleFilter=(e)=>{
+        console.log(e.target.value);
+        let option =e.target.value;
+        let newCategory=[...category];
+        // if(category already present there means no need to remove it from there meas uncheck)
+        if(category.includes(option))
+        {
+            newCategory.splice(newCategory.indexOf(option),1)
+        }
+        else{
+            newCategory.push(option)
+        }
+        setCategory(newCategory)
     }
-    setCategory(newCategory);
-  };
+ 
 
   useEffect(() => {
     if (category || sort) {
@@ -39,8 +44,20 @@ export const FilterSort = () => {
     }
   }, [category, setSearchParams, sort]);
 
+ 
+
   return (
     <Box>
+
+       {/* <input type="checkbox" value="K-Pop" defaultChecked={category.includes("K-Pop")} onChange={handleData}/>
+       <label>K-Pop</label><br></br>
+       <input type="checkbox" value="Pop" defaultChecked={category.includes("Pop")} onChange={handleData}/>
+       <label>Pop</label><br></br>
+       <input type="checkbox" value="Holiday" defaultChecked={category.includes("Holiday")} onChange={handleData}/>
+       <label>Holiday</label><br></br>
+       <input type="checkbox" value="Classical Crossover" defaultChecked={category.includes("Classical Crossover")} 
+       onChange={handleData}/>
+       <label>Classical Crossover</label><br></br> */}
       <Text
         fontWeight={"800"}
         marginLeft={"3%"}
@@ -103,6 +120,9 @@ export const FilterSort = () => {
           </Checkbox>
         </Stack>
       </Box>
+     
+
+
       <Text
         fontWeight={"800"}
         marginLeft={"3%"}
