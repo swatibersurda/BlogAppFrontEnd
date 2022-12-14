@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Divider } from "@chakra-ui/react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useLocation, useSearchParams } from "react-router-dom"
+import { Link, useLocation, useSearchParams } from "react-router-dom"
 import { getAllBlogList } from "../Redux/AppReducer/action"
 import { BlogCard } from "./BlogCard"
 import { BloggCard } from "./BloggCard"
@@ -30,8 +30,11 @@ export const BlogListingPage=()=>{
     return(
         <Box>{blogs.length>0&&blogs.map((item)=>{
             // return <BlogCard item={item}/>
-            return <BloggCard item={item}/>
+            return <Link to={`/detailblog/${item._id}`}><BloggCard item={item}/></Link>
+            
 
-        })}</Box>
+        })}
+       
+        </Box>
     )
 }

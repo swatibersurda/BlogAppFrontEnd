@@ -9,13 +9,15 @@ export const BlogList=()=>{
             <Navbar/>
             <Box display={"flex"} >
                 {/* box for displaying data or filtercomponent */}
-                <Box marginLeft={{ base: '0.2%', md: '0.5%', lg: '0.5%' }} width={{ base: '50%', md: '25%', lg: '20%' }}
-                 marginTop="2%" height={"500px"}>
+                <Box border={"1px solid transparent"}
+                 marginLeft={{ base: '1%',sm:"1%", md: '1%', lg: '1%' }} width={{ base: '40%',sm:"33%", md: '23%', lg: '15%' }}
+                 marginTop="2%" height={"700px"}  boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} 
+                 >
                     <FilterSort/>
                 </Box>
                 {/* box for displaying data after filteror sort */}
                 <Box border={"1px solid none"} 
-                 width={{ base: '50%', md: '64%', lg: '75%' }} marginTop="2%" >
+                 width={{ base: '57%',sm:"65%", md: '68%', lg: '79%' }} marginTop="2%" marginLeft={"1.5%"} >
                     <BlogListingPage/>
                 </Box>
             </Box>

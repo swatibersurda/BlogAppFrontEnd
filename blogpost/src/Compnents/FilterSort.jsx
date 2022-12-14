@@ -7,6 +7,7 @@ import {
   RadioGroup,
   Radio,
   CheckboxGroup,
+  Divider,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -50,13 +51,14 @@ export const FilterSort = () => {
     <Box>
       
       <Text
-        fontWeight={"800"}
+        fontWeight={"500"}
         marginLeft={"3%"}
-        marginTop="0%"
+        marginTop="5%"
         fontSize={{ base: "16px", md: "18px", lg: "20px" }}
       >
         Filter By Category
       </Text>
+      <Divider/>
       <Box
         marginLeft={"3%"}
         marginTop="8%"
@@ -69,10 +71,10 @@ export const FilterSort = () => {
             size="md"
             value={"food"}
             colorScheme="green"
-            borderColor="green.600"
+            borderColor="black.600"
             onChange={handleFilter}
             defaultChecked={category.includes("food")}
-            fontSize={{ base: "12px", md: "18px", lg: "20px" }}
+            fontSize={{ base: "12px", md: "18px", lg: "20px" }} 
           >
             Food
           </Checkbox>
@@ -81,7 +83,7 @@ export const FilterSort = () => {
             value={"poet"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="green.600"
+            borderColor="black.600"
             onChange={handleFilter}
             defaultChecked={category.includes("poet")}
           >
@@ -92,9 +94,9 @@ export const FilterSort = () => {
             value={"Entertainment"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="green.600"
+            borderColor="black.1600"
             onChange={handleFilter}
-            defaultChecked={category.includes("Entertainment")}
+            defaultChecked={category.includes("Entertainment")} 
           >
             Entertainment
           </Checkbox>
@@ -103,25 +105,76 @@ export const FilterSort = () => {
             value={"Animal"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="green.600"
+            borderColor="black.600"
             onChange={handleFilter}
             defaultChecked={category.includes("Animal")}
           >
             Animal
           </Checkbox>
+
+          <Checkbox
+            size="md"
+            value={"Science"}
+            colorScheme="green"
+            marginTop={"5%"}
+            borderColor="black.600"
+            onChange={handleFilter}
+            defaultChecked={category.includes("Science")}
+          >
+           Science
+          </Checkbox>
+          <Checkbox
+            size="md"
+            value={"Technology"}
+            colorScheme="green"
+            marginTop={"5%"}
+            borderColor="black.600"
+            onChange={handleFilter}
+            defaultChecked={category.includes("Technology")}
+          >
+           Technology
+          </Checkbox>
+
+
+          <Checkbox
+            size="md"
+            value={" Economy"}
+            colorScheme="green"
+            marginTop={"5%"}
+            borderColor="black.600"
+            onChange={handleFilter}
+            defaultChecked={category.includes(" Economy")}
+          >
+           Economy
+
+          </Checkbox>
+
+          <Checkbox
+            size="md"
+            value={"Fashion"}
+            colorScheme="green"
+            marginTop={"5%"}
+            borderColor="black.600"
+            onChange={handleFilter}
+            defaultChecked={category.includes("Fashion")}
+          >
+        Fashion
+
+          </Checkbox>
         </Stack>
       </Box>
      
-
+      
 
       <Text
-        fontWeight={"800"}
+        fontWeight={"500"}
         marginLeft={"3%"}
-        marginTop="5%"
+        marginTop={{base:"80%",md:"75%",lg:"70%"}}
         fontSize={{ base: "16px", md: "18px", lg: "20px" }}
       >
         Sort By Title
       </Text>
+      <Divider/>
       <Box
         padding={"2%"}
         marginLeft={"3%"}
@@ -129,19 +182,20 @@ export const FilterSort = () => {
         width="70%"
         height={"100px"}
       >
+       
         {/* <Text fontWeight={"800"} marginLeft={"2%"} marginTop="5%" fontSize={"20px"}>Filter By Category</Text> */}
         <RadioGroup marginTop={"8%"} onChange={setSort} value={sort}>
           <Stack direction="column">
             <Radio
               value={"title"}
-              borderColor="green.600"
+              borderColor="black"
               defaultChecked={sort === "title"}
             >
               asc
             </Radio>
             <Radio
               value={"-title"}
-              borderColor="green.600"
+              borderColor="black.600"
               defaultChecked={sort === "-title"}
             >
               dsc
