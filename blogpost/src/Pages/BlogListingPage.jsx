@@ -14,7 +14,7 @@ export const BlogListingPage=()=>{
     const [searchParams,setSearchParams]=useSearchParams();
     const location=useLocation();
      useEffect(()=>{
-     if(blogs.length===0 ||location.search){
+     if(blogs.length===0 ||location){
         
           let  params={
                 category:searchParams.getAll("category"),

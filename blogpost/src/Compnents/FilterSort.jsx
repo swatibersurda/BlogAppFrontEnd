@@ -80,14 +80,14 @@ export const FilterSort = () => {
           </Checkbox>
           <Checkbox
             size="md"
-            value={"poet"}
+            value={"Movies"}
             colorScheme="green"
             marginTop={"5%"}
             borderColor="black.600"
             onChange={handleFilter}
-            defaultChecked={category.includes("poet")}
+            defaultChecked={category.includes("Movies")}
           >
-            Poet
+            Movies
           </Checkbox>
           <Checkbox
             size="md"
@@ -151,14 +151,14 @@ export const FilterSort = () => {
 
           <Checkbox
             size="md"
-            value={"Fashion"}
+            value={"Other"}
             colorScheme="green"
             marginTop={"5%"}
             borderColor="black.600"
             onChange={handleFilter}
-            defaultChecked={category.includes("Fashion")}
+            defaultChecked={category.includes("Other")}
           >
-        Fashion
+       Other
 
           </Checkbox>
         </Stack>

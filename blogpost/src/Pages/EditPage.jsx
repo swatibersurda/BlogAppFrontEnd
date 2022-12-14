@@ -12,6 +12,7 @@ import {
   Text,
   useColorModeValue,
   Textarea,
+  Select,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -90,19 +91,31 @@ export const EditPage = () => {
 
           {/* ffffff */}
           <FormControl id="cat">
-            <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
-              Categorey
-            </FormLabel>
-            <Input placeholder="enter only Food,Entertainment,Animal"
-              marginLeft={"0%"}
-              width={"94%"}
-              height={"35px"}
-              type="cat"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            />
+          <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
+                Category
+              </FormLabel>
+             <Select mb={"15px"} borderColor={"blue.400"} 
+                marginLeft={"3%"}
+                width={"94%"}
+                height={"35px"}
+                type="cat"
+                value={category}
+             variant="outline" placeholder="Select category"
+             onChange={(e) => {
+              setCategory(e.target.value);
+            }}
+             >
+              <option>Food</option>
+              <option>Movies</option>
+              <option>Entertainment</option> 
+              <option>Animals</option>
+              <option>Science</option>
+              <option>Technology</option>
+              <option>Economy</option>
+             <option>Other</option>
+          </Select>
+
+
           </FormControl>
 
           <FormControl id="read">

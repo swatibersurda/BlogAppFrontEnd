@@ -11,7 +11,7 @@ import {
     Heading,
     Text,
     useColorModeValue,
-    Textarea,
+    Textarea,Select
   } from "@chakra-ui/react";
   import { useState } from "react";
   import { useEffect } from "react";
@@ -96,15 +96,15 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
               color={"blue.400"}
               fontSize={"18px"}
             >
-              PUBLISH HERE
+              ADD BLOG HERE
             </Heading>
   
             {/* ffffff */}
             <FormControl id="cat">
-              <FormLabel marginLeft={"3%"} marginBottom={"1%"} >
+              {/* <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
                 Categorey
-              </FormLabel>
-              <Input borderColor={"blue.400"} 
+              </FormLabel> */}
+              {/* <Input borderColor={"blue.400"} 
                 marginLeft={"0%"}
                 width={"94%"}
                 height={"35px"}
@@ -113,11 +113,37 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
                 onChange={(e) => {
                   setCategory(e.target.value);
                 }}
-              />
+                placeholder="eg:Food,Movies,Entertainment,Animal,Science,Technology,Economy,Others"
+              /> */}
+              <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
+                Category
+              </FormLabel>
+             <Select mb={"15px"} borderColor={"blue.400"}  bgGradient= {"linear(to-r, blue.400, green.500)"} 
+                marginLeft={"3%"}
+                width={"94%"}
+                height={"35px"}
+                type="cat"
+                value={category}
+             variant="outline" placeholder="Select category"
+             onChange={(e) => {
+              setCategory(e.target.value);
+            }}
+             >
+              <option>Food</option>
+              <option>Movies</option>
+              <option>Entertainment</option> 
+              <option>Animals</option>
+              <option>Science</option>
+              <option>Technology</option>
+              <option>Economy</option>
+             <option>Other</option>
+          </Select>
+
+
             </FormControl>
   
             <FormControl id="read">
-              <FormLabel marginLeft={"3%"} marginBottom={"1%"}>
+              <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
                 Min_Read
               </FormLabel>
               <Input borderColor={"blue.400"} 
@@ -134,7 +160,7 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
   
             
             <FormControl id="metadata">
-              <FormLabel marginLeft={"3%"} marginBottom={"1%"}>
+              <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
                 Mata_Data
               </FormLabel>
               <Input borderColor={"blue.400"} 
@@ -152,7 +178,7 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
             
           
             <FormControl id="title">
-              <FormLabel marginLeft={"3%"} marginBottom={"1%"}>
+              <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
                 Tiltle
               </FormLabel>
               <Input borderColor={"blue.400"} 
@@ -169,7 +195,7 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
           
             
             <FormControl id="author">
-              <FormLabel marginLeft={"3%"} marginBottom={"1%"}>
+              <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
                 Author
               </FormLabel>
               <Input borderColor={"blue.400"} 
@@ -186,7 +212,7 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
          
             
             <FormControl id="imagee">
-              <FormLabel marginLeft={"3%"} marginBottom={"1%"}>
+              <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
                 Image_Url
               </FormLabel>
               <Input borderColor={"blue.400"} 
@@ -202,12 +228,13 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
             </FormControl>
   
             {/* <Text mb='8px'>Value: {value}</Text> */}
-            <FormLabel marginLeft={"3%"} marginBottom={"1%"}>Content</FormLabel>
+            <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
+              Content</FormLabel>
         <Textarea  marginLeft={"0%"} borderColor={"blue.400"} 
                 width={"94%"}
           value={content}
           onChange={(e)=>setContent(e.target.value)}
-          placeholder='Here is a sample placeholder'
+          placeholder='300 words limit'
           size='sm'>
             
           </Textarea>
@@ -217,9 +244,11 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
               marginBottom={"2%"}
               backgroundColor={"green.600"}
               marginTop={"2%"}
+              bgGradient= {"linear(to-r, blue.400, green.500)"}
+              color={"white"}
               
             >
-              Update
+              Submit
             </Button>
           </Box>
         </Box>
@@ -227,3 +256,14 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
     );
   };
   
+
+  // <FormLabel mb={"-5px"}>Category</FormLabel>
+  // <Select mb={"15px"} variant="flushed" placeholder="Select category">
+  // <option>Technology</option>
+  // <option>Animals</option>
+  // <option>Food</option>
+  // <option>Entertainment</option>
+  // <option>Economy</option>
+  // <option>Other</option>
+// </Select>
+// 
