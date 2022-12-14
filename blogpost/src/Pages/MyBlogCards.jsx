@@ -26,6 +26,8 @@ import {
 
 export const MyBlogCard = ({ item }) => {
   const userId = useSelector((state) => state.AuthReducer.tokenData.user._id);
+  const name=useSelector((state)=>state.AuthReducer.tokenData.user.name);
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -104,7 +106,7 @@ export const MyBlogCard = ({ item }) => {
       {/* Author */}
       <Flex alignItems={"center"} m={"1.8%"} justifyContent={"space-between"}>
         <Text fontSize={"18px"}  fontWeight={500}>Author:</Text>
-        <Heading fontSize={"18px"}  color={"green.600"}>{item.writter}</Heading>
+        <Heading fontSize={"18px"}  color={"green.600"}>{name}</Heading>
       </Flex>
 
       <Flex>
