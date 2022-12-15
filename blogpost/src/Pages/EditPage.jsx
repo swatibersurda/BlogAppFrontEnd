@@ -20,7 +20,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getAllBlogList, getBlogsByUserList, updateUserBlog } from "../Redux/AppReducer/action";
 import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUCESS} from "../Redux/AppReducer/actionType";
-import { Navbar } from "./NavBar";
+import { Navbarr } from "./Navbarr";
 export const EditPage = () => {
   const { id } = useParams();
   const dispatch=useDispatch();
@@ -32,19 +32,19 @@ export const EditPage = () => {
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
   const navigate=useNavigate();
-  console.log(category, min_read, meta_data, title, writter, content, image);
+  
   // this user needs because after post we will fetch all blogs and login user blog fectch
   const userId=useSelector((state)=>state.AuthReducer.tokenData.user._id);
 
         const HandlePatch=()=>{
-          console.log("inside","hhdv")
+          
           if(category&&min_read&&meta_data&&title&&writter&&content&&image&&id){
             let payload;
             payload={
               category,min_read,meta_data,title,writter,content,image
             } 
            dispatch(updateUserBlog(payload,id)).then((res)=>{
-            console.log(res,"res here")
+           
             if(res===UPDATE_USERBLOGLIST_SUCESS){
               dispatch(getAllBlogList()).then((res)=>{
                 if(res===GET_ALLBLOGLIST_SUCESS){
@@ -66,7 +66,7 @@ export const EditPage = () => {
 
   return (
     <Box height="800px" >
-      <Navbar />
+      <Navbarr/>
       <Box>
         <Box
           borderRadius={"8px"}

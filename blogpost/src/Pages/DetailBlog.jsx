@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { getBlogByIdList } from "../Redux/AppReducer/action";
 import { DetailCard } from "./DetailCard";
-import { Navbar } from "./NavBar";
+import { Navbarr } from "./Navbarr";
 export const DetailBlog=()=>{
     const {id}=useParams();
     const dataToDispay=useSelector((state)=>state.AppReducer.singleBlog);
-    console.log(dataToDispay,"datatodisolay..")
+    
     const dispatch=useDispatch();
 
     useEffect(()=>{
@@ -19,7 +19,7 @@ export const DetailBlog=()=>{
 
     return(
         <Box>
-            <Navbar/>
+            <Navbarr/>
             <Heading fontFamily={"cursive"}
              textAlign={"center"} marginTop={"4%"} fontSize={"22px"} marginRight={"2%"} marginLeft={"2%"}>{dataToDispay.meta_data}</Heading>
             <Box width="100%" border=" blue.400">

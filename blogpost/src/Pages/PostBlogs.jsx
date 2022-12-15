@@ -18,9 +18,9 @@ import {
 import { useDispatch, useSelector } from "react-redux";
   import { useNavigate, useParams } from "react-router-dom";
   
-  import { Navbar } from "./NavBar";
   import { getAllBlogList, getBlogsByUserList, postUserBlog, updateUserBlog } from "../Redux/AppReducer/action";
 import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUCESS, POST_USERBLOGLIST_SUCESS} from "../Redux/AppReducer/actionType";
+import { Navbarr } from "./Navbarr";
   
   export const PostBlogs = () => {
     const { id } = useParams();
@@ -33,10 +33,9 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
     const [image, setImage] = useState("");
     const navigate=useNavigate();
     const dispatch=useDispatch();
-    console.log(category, min_read, meta_data, title, writter, content, image,"ll");
     const user_id=useSelector((state)=>state.AuthReducer.tokenData.user._id);
     const token=useSelector((state)=>state.AuthReducer.tokenData)
-    console.log(token,user_id,"logedin user");
+  
     
   //  
   const HandlePost=()=>{
@@ -54,18 +53,14 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
        
       }
       dispatch(postUserBlog(payload)).then((res)=>{
-        console.log("respostt..",res)
         if(res===POST_USERBLOGLIST_SUCESS){
           dispatch(getAllBlogList()).then((res)=>{
-            console.log("all suces",res)
+
 
             if(res===GET_ALLBLOGLIST_SUCESS){
               
               dispatch(getBlogsByUserList(user_id)).then((res)=>{
-                // console.log(res,"res")
-                // if(res===GET_USERBLOGLIST_SUCESS){
                   navigate("/",{replace:true})
-                // }
               })
             }
           })
@@ -73,10 +68,10 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
       })
    }
   }
-    // 
+    
     return (
       <Box height="800px" >
-        <Navbar />
+        <Navbarr/>
         <Box>
           <Box
             borderRadius={"8px"}
@@ -99,22 +94,8 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
               ADD BLOG HERE
             </Heading>
   
-            {/* ffffff */}
+          
             <FormControl id="cat">
-              {/* <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
-                Categorey
-              </FormLabel> */}
-              {/* <Input borderColor={"blue.400"} 
-                marginLeft={"0%"}
-                width={"94%"}
-                height={"35px"}
-                type="cat"
-                value={category}
-                onChange={(e) => {
-                  setCategory(e.target.value);
-                }}
-                placeholder="eg:Food,Movies,Entertainment,Animal,Science,Technology,Economy,Others"
-              /> */}
               <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
                 Category
               </FormLabel>
@@ -226,8 +207,6 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
                 }}
               />
             </FormControl>
-  
-            {/* <Text mb='8px'>Value: {value}</Text> */}
             <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
               Content</FormLabel>
         <Textarea  marginLeft={"0%"} borderColor={"blue.400"} 
@@ -257,13 +236,4 @@ import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUC
   };
   
 
-  // <FormLabel mb={"-5px"}>Category</FormLabel>
-  // <Select mb={"15px"} variant="flushed" placeholder="Select category">
-  // <option>Technology</option>
-  // <option>Animals</option>
-  // <option>Food</option>
-  // <option>Entertainment</option>
-  // <option>Economy</option>
-  // <option>Other</option>
-// </Select>
-// 
+  

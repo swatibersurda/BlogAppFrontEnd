@@ -8,10 +8,9 @@ import { BloggCard } from "./BloggCard"
 
 export const BlogListingPage=()=>{
      const blogs=useSelector((state)=>state.AppReducer.allBlog);
-     console.log(blogs,"blogss")
+    
      const dispatch=useDispatch();
-     console.log(blogs);
-    const [searchParams,setSearchParams]=useSearchParams();
+     const [searchParams,setSearchParams]=useSearchParams();
     const location=useLocation();
      useEffect(()=>{
      if(blogs.length===0 ||location){
@@ -30,7 +29,9 @@ export const BlogListingPage=()=>{
     return(
         <Box>{blogs.length>0&&blogs.map((item)=>{
             // return <BlogCard item={item}/>
-            return <Link to={`/detailblog/${item._id}`}><BloggCard item={item}/></Link>
+            return <Link to={`/detailblog/${item._id}`}key={item._id} >
+                <BloggCard item={item} />
+            </Link>
             
 
         })}

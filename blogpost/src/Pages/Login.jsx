@@ -24,9 +24,8 @@ import { Link as RouterLink} from "react-router-dom";
     const [password,setPassword]=useState("");
     const dispatch=useDispatch();
     const navigate=useNavigate();
-    // const {tokenData,isAuth}=useSelector((state)=>state.AuthReducer);
-    // console.log(tokenData,isAuth,"tokennn..")
-   console.log(email,password,"EMAIL")
+   
+   
    const location=useLocation();
    const comingfrom=location.state?.from?.pathname || "/";
     
@@ -41,7 +40,6 @@ import { Link as RouterLink} from "react-router-dom";
                 password
              }
              dispatch(postUserSignIn(payload)).then((res)=>{
-                console.log(res,"ress")
                 if(res===USER_POST_SIGNIN_SUCESS){
                     alert("congratulation Login sucessfully")
                      navigate(comingfrom,{replace:true})
@@ -109,7 +107,7 @@ import { Link as RouterLink} from "react-router-dom";
               />
             </FormControl>
   
-            <FormControl id="metadata" marginBottom={"2%"}>
+            <FormControl id="password" marginBottom={"2%"}>
               <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"30px"} color="black">
                 Password
               </FormLabel>
@@ -118,7 +116,7 @@ import { Link as RouterLink} from "react-router-dom";
                 borderColor="black"
                 width={"90%"}
                 height={"50px"}
-                type="metadata"
+                type="password"
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);

@@ -33,14 +33,12 @@ export const MyBlogCard = ({ item }) => {
 
   // do delete here.
   const handleDelete = (id) => {
-    // console.log(id,"idd to")
+  
     dispatch(deleteUserBlog(id)).then((res) => {
-      console.log(res, "res");
       // here we need userid as well to fecth data or after deleting need to see the deleted data
       if (res === DELETE_USERBLOGLIST_SUCESS) {
         // get users's particular blog after deletion.
         dispatch(getBlogsByUserList(userId)).then((res) => {
-          console.log(res, "res22");
           if (res === GET_USERBLOGLIST_SUCESS) {
             // get all blogs after deletion.
             dispatch(getAllBlogList());
@@ -51,10 +49,7 @@ export const MyBlogCard = ({ item }) => {
       }
     });
   };
-  // do editing here.
-  const handleEdit = (id) => {
-    console.log(id, "idd to");
-  };
+  
 
   return (
     <Box

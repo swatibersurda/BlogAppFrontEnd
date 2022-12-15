@@ -18,13 +18,13 @@ export const FilterSort = () => {
   const urlSort = searchParams.get("sort");
   const [category, setCategory] = useState(urlCategory || []);
   const [sort, setSort] = useState(urlSort || "");
-  console.log(category,"cattt")
+
 
  const handleFilter=(e)=>{
-        console.log(e.target.value);
+       
         let option =e.target.value;
         let newCategory=[...category];
-        // if(category already present there means no need to remove it from there meas uncheck)
+        
         if(category.includes(option))
         {
             newCategory.splice(newCategory.indexOf(option),1)

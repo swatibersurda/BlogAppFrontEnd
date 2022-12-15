@@ -3,12 +3,10 @@ import * as Types from "./actionType";
 
 
 export const getAllBlogList = (params) => (dispatch) => {
-  console.log(params,"params")
   
   return axios
     .get(`https://cyan-panicky-binturong.cyclic.app/blog`, { params })
     .then((res) => {
-      console.log(res.data, "boglisttttig");
       dispatch({ type: Types.GET_ALLBLOGLIST_SUCESS, payload: res.data });
       return Types.GET_ALLBLOGLIST_SUCESS;
     })
@@ -20,12 +18,11 @@ export const getAllBlogList = (params) => (dispatch) => {
 
 
 export const getBlogByIdList = (id) => (dispatch) => {
-  console.log(id,"params")
+
   
   return axios
     .get(`https://cyan-panicky-binturong.cyclic.app/blog/${id}`)
     .then((res) => {
-      console.log(res.data, "boglisttttig");
       dispatch({ type: Types.GET_IDBLOGLIST_SUCESS,payload:res.data});
       return Types.GET_IDBLOGLIST_SUCESS;
     })
@@ -38,12 +35,11 @@ export const getBlogByIdList = (id) => (dispatch) => {
 
 // USERS BLOG
 export const getBlogsByUserList = (id) => (dispatch) => {
-  console.log(id,"params")
+
   
   return axios
     .get(`https://cyan-panicky-binturong.cyclic.app/users/${id}`)
     .then((res) => {
-      console.log(res.data, "boglisttttig");
       dispatch({ type: Types.GET_USERBLOGLIST_SUCESS,payload:res.data.blogsArray});
       return Types.GET_USERBLOGLIST_SUCESS;
     })
@@ -54,12 +50,11 @@ export const getBlogsByUserList = (id) => (dispatch) => {
 };
 
 export const deleteUserBlog = (id) => (dispatch) => {
-  console.log(id,"params")
+
   
   return axios
     .delete(`https://cyan-panicky-binturong.cyclic.app/blog/${id}`)
     .then((res) => {
-      console.log(res.data, "boglisttttig");
       dispatch({ type: Types.DELETE_USERBLOGLIST_SUCESS});
       return Types.DELETE_USERBLOGLIST_SUCESS;
     })
@@ -71,12 +66,11 @@ export const deleteUserBlog = (id) => (dispatch) => {
 
 
 export const updateUserBlog = (payload,id) => (dispatch) => {
-  console.log(payload,id,"params")
+
   
   return axios
     .patch(`https://cyan-panicky-binturong.cyclic.app/blog/${id}`,payload)
     .then((res) => {
-      console.log(res.data, "upadteduser");
       dispatch({ type: Types.UPDATE_USERBLOGLIST_SUCESS});
       return Types.UPDATE_USERBLOGLIST_SUCESS;
     })
@@ -88,12 +82,11 @@ export const updateUserBlog = (payload,id) => (dispatch) => {
 
 
 export const postUserBlog = (payload) => (dispatch) => {
-   console.log(payload,"paYLOADPOST")
+
   
   return axios
     .post("https://cyan-panicky-binturong.cyclic.app/blog",payload)
     .then((res) => {
-      console.log(res.data, "boglisttttig");
       dispatch({ type: Types.POST_USERBLOGLIST_SUCESS});
       return Types.POST_USERBLOGLIST_SUCESS;
     })

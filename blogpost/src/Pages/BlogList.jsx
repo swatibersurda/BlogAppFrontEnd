@@ -1,12 +1,12 @@
 import { Box } from "@chakra-ui/react"
 import { FilterSort } from "../Compnents/FilterSort"
 import { BlogListingPage } from "./BlogListingPage"
-import { Navbar } from "./NavBar"
+import { Navbarr } from "./Navbarr"
 
 export const BlogList=()=>{
     return(
         <Box>
-            <Navbar/>
+            <Navbarr/>
             <Box display={"flex"} >
                 {/* box for displaying data or filtercomponent */}
                 <Box border={"1px solid transparent"}
