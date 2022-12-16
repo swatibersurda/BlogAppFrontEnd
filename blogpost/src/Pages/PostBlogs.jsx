@@ -80,7 +80,7 @@ export const PostBlogs = () => {
   return (
     <Box height="800px">
       <Navbarr />
-      <Box>
+      <Box marginTop={"4%"}>
         <Box
           borderRadius={"8px"}
           width={{ base: "70%", md: "50%", lg: "40%" }}

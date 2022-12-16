@@ -58,12 +58,12 @@ export const SignUp = () => {
         <Box
           height={"60%"}
           borderRadius={"8px"}
-          width={{ base: "70%", md: "50%", lg: "40%" }}
+          width={{ base: "90%", md: "70%", lg: "40%" }}
           backgroundColor="none"
           textAlign="center"
           margin={"auto"}
           border={"2px solid transparent"}
-          marginTop={"2%"}
+          marginTop={{base:"28%",md:"25%",lg:"12%",xl:"6%"}}
           boxShadow={
             "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
           }
