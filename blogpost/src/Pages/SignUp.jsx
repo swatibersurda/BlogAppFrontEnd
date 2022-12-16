@@ -22,7 +22,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 
-
 export const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -57,12 +56,11 @@ export const SignUp = () => {
     <Box
       width={"100%"}
       height={"100vh"}
-      border={"2px solid transparent"}  
+      border={"2px solid transparent"}
       backgroundImage={
         "https://cdn.pixabay.com/photo/2016/03/22/15/29/blue-1273089_1280.jpg"
       }
       backgroundSize="contain"
-     
     >
       <Box width={"100%"} height="0%" border={"2px solid none"} marginTop="4%">
         <Box
@@ -87,10 +85,17 @@ export const SignUp = () => {
             SIGN UP HERE
           </Heading>
           <FormControl id="cat" marginBottom={"2%"}>
-            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"} color="black">
+            <FormLabel
+              marginLeft={"5%"}
+              marginBottom={"2%"}
+              fontSize={"20px"}
+              color="black"
+            >
               Name
             </FormLabel>
-            <Input  border={"3px solid black"} fontSize={"20px"}
+            <Input
+              border={"3px solid black"}
+              fontSize={"20px"}
               marginLeft={"0%"}
               borderColor="black"
               width={"90%"}
@@ -104,11 +109,17 @@ export const SignUp = () => {
           </FormControl>
 
           <FormControl id="read" marginBottom={"2%"}>
-            <FormLabel marginLeft={"5%"} marginBottom={"2%"} color="black" 
-            fontSize={"20px"}>
+            <FormLabel
+              marginLeft={"5%"}
+              marginBottom={"2%"}
+              color="black"
+              fontSize={"20px"}
+            >
               Email
             </FormLabel>
-            <Input  border={"3px solid black"} fontSize={"20px"}
+            <Input
+              border={"3px solid black"}
+              fontSize={"20px"}
               marginLeft={"0%"}
               borderColor="black"
               width={"90%"}
@@ -122,10 +133,17 @@ export const SignUp = () => {
           </FormControl>
 
           <FormControl id="password" marginBottom={"2%"}>
-            <FormLabel marginLeft={"5%"} marginBottom={"2%"} fontSize={"20px"} color="black">
+            <FormLabel
+              marginLeft={"5%"}
+              marginBottom={"2%"}
+              fontSize={"20px"}
+              color="black"
+            >
               Password
             </FormLabel>
-            <Input border={"3px solid black"} fontSize={"20px"}
+            <Input
+              border={"3px solid black"}
+              fontSize={"20px"}
               marginLeft={"0%"}
               borderColor="black"
               width={"90%"}
@@ -146,7 +164,7 @@ export const SignUp = () => {
               Already a Users?
             </Text>
             <Link
-            fontSize={"19px"}
+              fontSize={"19px"}
               as={RouterLink}
               to={"/login"}
               fontWeight="700"

@@ -26,14 +26,13 @@ import {
 
 export const MyBlogCard = ({ item }) => {
   const userId = useSelector((state) => state.AuthReducer.tokenData.user._id);
-  const name=useSelector((state)=>state.AuthReducer.tokenData.user.name);
-  
+  const name = useSelector((state) => state.AuthReducer.tokenData.user.name);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   // do delete here.
   const handleDelete = (id) => {
-  
     dispatch(deleteUserBlog(id)).then((res) => {
       // here we need userid as well to fecth data or after deleting need to see the deleted data
       if (res === DELETE_USERBLOGLIST_SUCESS) {
@@ -49,7 +48,6 @@ export const MyBlogCard = ({ item }) => {
       }
     });
   };
-  
 
   return (
     <Box
@@ -89,19 +87,23 @@ export const MyBlogCard = ({ item }) => {
       </Flex>
 
       {/*  category */}
-      <Flex
-        alignItems={"center"}
-        m={"1.8%"}
-        justifyContent={"space-between"}
-      >
-        <Text fontSize={"18px"} fontWeight={500}>Category:</Text>
-        <Heading fontSize={"18px"} color={"green.600"}>{item.category}</Heading>
+      <Flex alignItems={"center"} m={"1.8%"} justifyContent={"space-between"}>
+        <Text fontSize={"18px"} fontWeight={500}>
+          Category:
+        </Text>
+        <Heading fontSize={"18px"} color={"green.600"}>
+          {item.category}
+        </Heading>
       </Flex>
 
       {/* Author */}
       <Flex alignItems={"center"} m={"1.8%"} justifyContent={"space-between"}>
-        <Text fontSize={"18px"}  fontWeight={500}>Author:</Text>
-        <Heading fontSize={"18px"}  color={"green.600"}>{name}</Heading>
+        <Text fontSize={"18px"} fontWeight={500}>
+          Author:
+        </Text>
+        <Heading fontSize={"18px"} color={"green.600"}>
+          {name}
+        </Heading>
       </Flex>
 
       <Flex>

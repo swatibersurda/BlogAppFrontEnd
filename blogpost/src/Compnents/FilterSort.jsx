@@ -69,11 +69,11 @@ export const FilterSort = () => {
         <Stack padding={"2%"} spacing={[2, 2]} direction={["column"]}>
           <Checkbox
             size="md"
-            value={"food"}
+            value={"Food"}
             colorScheme="green"
             borderColor="#4299e0"
             onChange={handleFilter}
-            defaultChecked={category.includes("food")}
+            defaultChecked={category.includes("Food")}
             fontSize={{ base: "12px", md: "18px", lg: "20px" }} 
           >
             Food
@@ -102,14 +102,14 @@ export const FilterSort = () => {
           </Checkbox>
           <Checkbox
             size="md"
-            value={"Animal"}
+            value={"Animals"}
             colorScheme="green"
             marginTop={"5%"}
             borderColor="#4299e0"
             onChange={handleFilter}
-            defaultChecked={category.includes("Animal")}
+            defaultChecked={category.includes("Animals")}
           >
-            Animal
+            Animals
           </Checkbox>
 
           <Checkbox
@@ -138,12 +138,12 @@ export const FilterSort = () => {
 
           <Checkbox
             size="md"
-            value={" Economy"}
+            value={"Economy"}
             colorScheme="green"
             marginTop={"5%"}
             borderColor="#4299e0"
             onChange={handleFilter}
-            defaultChecked={category.includes(" Economy")}
+            defaultChecked={category.includes("Economy")}
           >
            Economy
 

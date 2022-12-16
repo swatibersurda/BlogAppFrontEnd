@@ -158,7 +158,6 @@ export const Login = () => {
             fontSize={"20px"}
             marginBottom={"2%"}
             backgroundColor="green.600"
-            // bgGradient="linear(to-r, blue.400, green.500)"
             marginTop={"10%"}
             color="white"
             fontWeight={"800"}

@@ -7,7 +7,6 @@ import { MyBlogCard } from "./MyBlogCards";
 import { Navbarr } from "./Navbarr";
 
 export const MyBlog = () => {
-  // const token=useSelector((state)=>state.AuthReducer.tokenData);
   const userId = useSelector((state) => state.AuthReducer.tokenData.user._id);
   const name = useSelector((state) => state.AuthReducer.tokenData.user.name);
   const userBlogs = useSelector((state) => state.AppReducer.usersBlogss);

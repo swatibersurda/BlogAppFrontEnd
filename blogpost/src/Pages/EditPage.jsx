@@ -18,12 +18,20 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { getAllBlogList, getBlogsByUserList, updateUserBlog } from "../Redux/AppReducer/action";
-import { UPDATE_USERBLOGLIST_SUCESS ,GET_ALLBLOGLIST_SUCESS,GET_USERBLOGLIST_SUCESS} from "../Redux/AppReducer/actionType";
+import {
+  getAllBlogList,
+  getBlogsByUserList,
+  updateUserBlog,
+} from "../Redux/AppReducer/action";
+import {
+  UPDATE_USERBLOGLIST_SUCESS,
+  GET_ALLBLOGLIST_SUCESS,
+  GET_USERBLOGLIST_SUCESS,
+} from "../Redux/AppReducer/actionType";
 import { Navbarr } from "./Navbarr";
 export const EditPage = () => {
   const { id } = useParams();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const [category, setCategory] = useState("");
   const [min_read, setminread] = useState("");
   const [meta_data, setmetaData] = useState("");
@@ -31,42 +39,51 @@ export const EditPage = () => {
   const [writter, setWritter] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
-  const navigate=useNavigate();
-  
-  // this user needs because after post we will fetch all blogs and login user blog fectch
-  const userId=useSelector((state)=>state.AuthReducer.tokenData.user._id);
+  const navigate = useNavigate();
 
-        const HandlePatch=()=>{
-          
-          if(category&&min_read&&meta_data&&title&&writter&&content&&image&&id){
-            let payload;
-            payload={
-              category,min_read,meta_data,title,writter,content,image
-            } 
-           dispatch(updateUserBlog(payload,id)).then((res)=>{
-           
-            if(res===UPDATE_USERBLOGLIST_SUCESS){
-              dispatch(getAllBlogList()).then((res)=>{
-                if(res===GET_ALLBLOGLIST_SUCESS){
-                  dispatch(getBlogsByUserList(userId)).then((res)=>{
-                    if(res===GET_USERBLOGLIST_SUCESS){
-                      navigate("/",{replace:true})
-                    }
-                  })
+  // this user needs because after post we will fetch all blogs and login user blog fectch
+  const userId = useSelector((state) => state.AuthReducer.tokenData.user._id);
+
+  const HandlePatch = () => {
+    if (
+      category &&
+      min_read &&
+      meta_data &&
+      title &&
+      writter &&
+      content &&
+      image &&
+      id
+    ) {
+      let payload;
+      payload = {
+        category,
+        min_read,
+        meta_data,
+        title,
+        writter,
+        content,
+        image,
+      };
+      dispatch(updateUserBlog(payload, id)).then((res) => {
+        if (res === UPDATE_USERBLOGLIST_SUCESS) {
+          dispatch(getAllBlogList()).then((res) => {
+            if (res === GET_ALLBLOGLIST_SUCESS) {
+              dispatch(getBlogsByUserList(userId)).then((res) => {
+                if (res === GET_USERBLOGLIST_SUCESS) {
+                  navigate("/", { replace: true });
                 }
-              })
+              });
             }
-           })
-      }
+          });
         }
-       
-          
-    
-  
+      });
+    }
+  };
 
   return (
-    <Box height="800px" >
-      <Navbarr/>
+    <Box height="800px">
+      <Navbarr />
       <Box>
         <Box
           borderRadius={"8px"}
@@ -91,31 +108,32 @@ export const EditPage = () => {
 
           {/* ffffff */}
           <FormControl id="cat">
-          <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
-                Category
-              </FormLabel>
-             <Select mb={"15px"} borderColor={"blue.400"} 
-                marginLeft={"3%"}
-                width={"94%"}
-                height={"35px"}
-                type="cat"
-                value={category}
-             variant="outline" placeholder="Select category"
-             onChange={(e) => {
-              setCategory(e.target.value);
-            }}
-             >
+            <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
+              Category
+            </FormLabel>
+            <Select
+              mb={"15px"}
+              borderColor={"blue.400"}
+              marginLeft={"3%"}
+              width={"94%"}
+              height={"35px"}
+              type="cat"
+              value={category}
+              variant="outline"
+              placeholder="Select category"
+              onChange={(e) => {
+                setCategory(e.target.value);
+              }}
+            >
               <option>Food</option>
               <option>Movies</option>
-              <option>Entertainment</option> 
+              <option>Entertainment</option>
               <option>Animals</option>
               <option>Science</option>
               <option>Technology</option>
               <option>Economy</option>
-             <option>Other</option>
-          </Select>
-
-
+              <option>Other</option>
+            </Select>
           </FormControl>
 
           <FormControl id="read">
@@ -149,8 +167,6 @@ export const EditPage = () => {
             />
           </FormControl>
 
-          
-        
           <FormControl id="title">
             <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
               Tiltle
@@ -166,8 +182,7 @@ export const EditPage = () => {
               }}
             />
           </FormControl>
-        
-          
+
           <FormControl id="author">
             <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
               Author
@@ -183,8 +198,7 @@ export const EditPage = () => {
               }}
             />
           </FormControl>
-       
-          
+
           <FormControl id="imagee">
             <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
               Image_Url
@@ -202,17 +216,20 @@ export const EditPage = () => {
           </FormControl>
 
           {/* <Text mb='8px'>Value: {value}</Text> */}
-          <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>Content</FormLabel>
-      <Textarea  marginLeft={"0%"}
-              width={"94%"}
-        value={content}
-        onChange={(e)=>setContent(e.target.value)}
-        placeholder='100 words limit'
-        size='sm'>
-          
-        </Textarea>
-          <Button onClick={HandlePatch}
-           color={"white"}
+          <FormLabel marginLeft={"3%"} marginBottom={"1%"} color={"blue.400"}>
+            Content
+          </FormLabel>
+          <Textarea
+            marginLeft={"0%"}
+            width={"94%"}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="100 words limit"
+            size="sm"
+          ></Textarea>
+          <Button
+            onClick={HandlePatch}
+            color={"white"}
             marginLeft={"0%"}
             width={"94%"}
             marginBottom={"2%"}
