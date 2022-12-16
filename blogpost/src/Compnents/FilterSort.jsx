@@ -71,7 +71,7 @@ export const FilterSort = () => {
             size="md"
             value={"food"}
             colorScheme="green"
-            borderColor="black.600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes("food")}
             fontSize={{ base: "12px", md: "18px", lg: "20px" }} 
@@ -83,7 +83,7 @@ export const FilterSort = () => {
             value={"Movies"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="black.600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes("Movies")}
           >
@@ -94,7 +94,7 @@ export const FilterSort = () => {
             value={"Entertainment"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="black.1600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes("Entertainment")} 
           >
@@ -105,7 +105,7 @@ export const FilterSort = () => {
             value={"Animal"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="black.600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes("Animal")}
           >
@@ -117,7 +117,7 @@ export const FilterSort = () => {
             value={"Science"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="black.600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes("Science")}
           >
@@ -128,7 +128,7 @@ export const FilterSort = () => {
             value={"Technology"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="black.600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes("Technology")}
           >
@@ -141,7 +141,7 @@ export const FilterSort = () => {
             value={" Economy"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="black.600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes(" Economy")}
           >
@@ -154,7 +154,7 @@ export const FilterSort = () => {
             value={"Other"}
             colorScheme="green"
             marginTop={"5%"}
-            borderColor="black.600"
+            borderColor="#4299e0"
             onChange={handleFilter}
             defaultChecked={category.includes("Other")}
           >
@@ -184,19 +184,21 @@ export const FilterSort = () => {
       >
        
         {/* <Text fontWeight={"800"} marginLeft={"2%"} marginTop="5%" fontSize={"20px"}>Filter By Category</Text> */}
-        <RadioGroup marginTop={"8%"} onChange={setSort} value={sort}>
+        <RadioGroup marginTop={"8%"} onChange={setSort} value={sort} >
           <Stack direction="column">
             <Radio
               value={"title"}
-              borderColor="black"
+              borderColor="#4299e0"
               defaultChecked={sort === "title"}
+             
             >
               asc
             </Radio>
             <Radio
               value={"-title"}
-              borderColor="black.600"
+              borderColor="#4299e0"
               defaultChecked={sort === "-title"}
+             
             >
               dsc
             </Radio>

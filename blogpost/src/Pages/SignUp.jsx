@@ -56,7 +56,7 @@ export const SignUp = () => {
   return (
     <Box
       width={"100%"}
-      height="1800px"
+      height={"100vh"}
       border={"2px solid transparent"}  
       backgroundImage={
         "https://cdn.pixabay.com/photo/2016/03/22/15/29/blue-1273089_1280.jpg"
@@ -168,6 +168,10 @@ export const SignUp = () => {
             color="white"
             fontWeight={"800"}
             cursor={"pointer"}
+            _hover={{
+              background: "#4caf50",
+              color: "white.500",
+            }}
           >
             SUBMIT
           </Button>
