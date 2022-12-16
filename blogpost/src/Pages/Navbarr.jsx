@@ -16,7 +16,7 @@ export const Navbarr = () => {
     if (isAuth) {
       dispatch(logOut());
     } else {
-      navigate("/login", { replace: true });
+      navigate("/signin", { replace: true });
     }
   };
 

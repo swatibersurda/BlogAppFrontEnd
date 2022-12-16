@@ -32,7 +32,7 @@ export const reducer=(state=intialState,action)=>{
 
             }
         }
-        // GET BY BLOG ID.
+        
         case Types.GET_IDBLOGLIST_REQUEST:{
             return{
                 ...state,
@@ -54,7 +54,6 @@ export const reducer=(state=intialState,action)=>{
 
             }
         }
-        // get user blogs
         case Types.GET_USERBLOGLIST_REQUEST:{
             return{
                 ...state,

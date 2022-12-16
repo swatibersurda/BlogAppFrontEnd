@@ -5,7 +5,7 @@ export const ReqAuth = ({ children }) => {
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   const location = useLocation();
   if (!isAuth) {
-    return <Navigate to={"/login"} replace={true} state={{ from: location }} />;
+    return <Navigate to={"/signin"} replace={true} state={{ from: location }} />;
   }
   return children;
 };

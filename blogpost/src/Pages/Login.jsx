@@ -41,7 +41,7 @@ export const Login = () => {
       };
       dispatch(postUserSignIn(payload)).then((res) => {
         if (res === USER_POST_SIGNIN_SUCESS) {
-          alert("congratulation Login sucessfully");
+          alert("SignIn Successfully ");
           navigate(comingfrom, { replace: true });
         } else {
           alert("WRONG CREDENTIALS OR Not SIGNUP...........");
@@ -55,10 +55,6 @@ export const Login = () => {
       width={"100%"}
       height={"100vh"}
       border={"2px solid transparent"}
-      backgroundImage={
-        "https://cdn.pixabay.com/photo/2016/03/22/15/29/blue-1273089_1280.jpg"
-      }
-      backgroundSize="contain"
     >
       <Box width={"100%"} height="0%" border={"2px solid none"} marginTop="4%">
         <Box
@@ -82,10 +78,7 @@ export const Login = () => {
           >
             SIGN IN HERE
           </Heading>
-
-          {/* ffffff */}
-
-          <FormControl id="read" marginBottom={"2%"}>
+        <FormControl id="read" marginBottom={"2%"}>
             <FormLabel
               marginLeft={"5%"}
               marginBottom={"2%"}
@@ -145,7 +138,7 @@ export const Login = () => {
               as={RouterLink}
               to={"/signup"}
               fontWeight="700"
-              color="black"
+              color="blue.600"
             >
               SIGN UP
             </Link>
@@ -161,6 +154,7 @@ export const Login = () => {
             marginTop={"10%"}
             color="white"
             fontWeight={"800"}
+            background={"linear-gradient(to right, #4299e0, #4caf50)"}
             cursor={"pointer"}
             _hover={{
               background: "#4caf50",

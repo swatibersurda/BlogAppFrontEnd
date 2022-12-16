@@ -34,7 +34,7 @@ export const BloggCard = ({ item }) => {
           {item.meta_data}
         </Text>
         <Text fontSize={"13px"} marginTop={"7%"} fontWeight="600">
-          {item.writter}
+          By {item.writter}
         </Text>
         <Text fontSize={"13px"} marginTop={"1%"} fontWeight="600">
           CreatedAt:{item.createdAt}

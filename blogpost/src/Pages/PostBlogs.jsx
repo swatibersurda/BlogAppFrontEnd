@@ -205,6 +205,7 @@ export const PostBlogs = () => {
               Image_Url
             </FormLabel>
             <Input
+              placeholder="size:800*600"
               borderColor={"blue.400"}
               marginLeft={"0%"}
               width={"94%"}
@@ -225,7 +226,6 @@ export const PostBlogs = () => {
             width={"94%"}
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="300 words limit"
             size="sm"
           ></Textarea>
           <Button

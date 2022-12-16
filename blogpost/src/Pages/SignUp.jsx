@@ -42,32 +42,24 @@ export const SignUp = () => {
       };
       dispatch(postUserSignUp(payload)).then((res) => {
         if (res === USER_POST_SIGNUP_SUCESS) {
-          alert("congratulation user registed sucessfully");
-          navigate("/login", { replace: true });
+          alert("SignUp Successful");
+          navigate("/signin", { replace: true });
         }
         // will check for already registered user.
         else {
-          alert("Already Registered User SignIn ");
+          alert("Already Registered  User Please SignIn.... ");
         }
       });
     }
   };
   return (
-    <Box
-      width={"100%"}
-      height={"100vh"}
-      border={"2px solid transparent"}
-      backgroundImage={
-        "https://cdn.pixabay.com/photo/2016/03/22/15/29/blue-1273089_1280.jpg"
-      }
-      backgroundSize="contain"
-    >
+    <Box width={"100%"} height={"100vh"} border={"2px solid transparent"}>
       <Box width={"100%"} height="0%" border={"2px solid none"} marginTop="4%">
         <Box
           height={"60%"}
           borderRadius={"8px"}
           width={{ base: "70%", md: "50%", lg: "40%" }}
-          backgroundColor={"none"}
+          backgroundColor="none"
           textAlign="center"
           margin={"auto"}
           border={"2px solid transparent"}
@@ -166,9 +158,9 @@ export const SignUp = () => {
             <Link
               fontSize={"19px"}
               as={RouterLink}
-              to={"/login"}
+              to={"/signin"}
               fontWeight="700"
-              color="black"
+              color="blue.600"
             >
               SIGN IN
             </Link>
@@ -181,9 +173,9 @@ export const SignUp = () => {
             fontSize={"20px"}
             marginBottom={"2%"}
             backgroundColor="green.600"
-            // bgGradient="linear(to-r, blue.400, green.500)"
             marginTop={"10%"}
             color="white"
+            background={"linear-gradient(to right, #4299e0, #4caf50)"}
             fontWeight={"800"}
             cursor={"pointer"}
             _hover={{

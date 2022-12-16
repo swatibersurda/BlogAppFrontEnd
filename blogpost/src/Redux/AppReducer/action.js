@@ -33,7 +33,7 @@ export const getBlogByIdList = (id) => (dispatch) => {
 };
 
 
-// USERS BLOG
+
 export const getBlogsByUserList = (id) => (dispatch) => {
 
   

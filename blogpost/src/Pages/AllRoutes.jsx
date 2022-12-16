@@ -12,7 +12,7 @@ export const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/signup" element={<SignUp />}></Route>
-      <Route path="/login" element={<Login />}></Route>
+      <Route path="/signin" element={<Login />}></Route>
       <Route path="/" element={<BlogList />}></Route>
       <Route path="/detailblog/:id" element={<DetailBlog />}></Route>
       <Route

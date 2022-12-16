@@ -39,7 +39,7 @@ export const MyBlog = () => {
         >
           {userBlogs.length > 0 &&
             userBlogs.map((item) => {
-              return <MyBlogCard item={item} key={item.id} />;
+              return <MyBlogCard item={item} key={item._id} />;
             })}
         </Grid>
       </Box>

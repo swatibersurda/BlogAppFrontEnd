@@ -52,8 +52,7 @@ export const EditPage = () => {
       title &&
       writter &&
       content &&
-      image &&
-      id
+      image
     ) {
       let payload;
       payload = {
@@ -204,6 +203,7 @@ export const EditPage = () => {
               Image_Url
             </FormLabel>
             <Input
+              placeholder="size:800*600"
               marginLeft={"0%"}
               width={"94%"}
               height={"35px"}
@@ -224,7 +224,6 @@ export const EditPage = () => {
             width={"94%"}
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="100 words limit"
             size="sm"
           ></Textarea>
           <Button
