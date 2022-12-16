@@ -22,7 +22,11 @@ export const BloggCard = ({ item }) => {
         <Text fontFamily={"sans-serif"} fontSize={"12px"} marginTop={"5%"}>
           EDITOR'S PICK
         </Text>
-        <Heading fontSize={"24px"} fontFamily={"mono"} marginTop={"2%"}>
+        <Heading
+          fontSize={{ base: "18px", md: "20px", lg: "24px" }}
+          fontFamily={"mono"}
+          marginTop={"2%"}
+        >
           {item.title}
         </Heading>
         <Text

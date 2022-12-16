@@ -131,7 +131,7 @@ export const Login = () => {
               fontWeight={"600"}
               marginRight={{ base: "25%", lg: "45%" }}
             >
-              Not a Registerd Users?
+              Not a Registerd User?
             </Text>
             <Link
               fontSize={"19px"}

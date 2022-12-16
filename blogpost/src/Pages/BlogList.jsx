@@ -1,14 +1,21 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
+import { useState } from "react";
 import { FilterSort } from "../Compnents/FilterSort";
 import { BlogListingPage } from "./BlogListingPage";
 import { Navbarr } from "./Navbarr";
+import "./navbarr.css";
 
 export const BlogList = () => {
+  const [we, setWe] = useState(false);
+  const handlefill = () => {
+    console.log("hii");
+    setWe(!we);
+  };
   return (
     <Box>
       <Navbarr />
+
       <Box display={"flex"}>
-        {/* box for displaying data or filtercomponent */}
         <Box
           border={"1px solid transparent"}
           marginLeft={{ base: "1%", sm: "1%", md: "1%", lg: "1%" }}
@@ -19,10 +26,11 @@ export const BlogList = () => {
         >
           <FilterSort />
         </Box>
+        {/* </Box>:""} */}
         {/* box for displaying data after filteror sort */}
         <Box
           border={"1px solid none"}
-          width={{ base: "50%", sm: "65%", md: "68%", lg: "79%" }}
+          width={{ base: "49%", sm: "65%", md: "68%", lg: "79%" }}
           marginTop="2%"
           marginLeft={"1.5%"}
         >

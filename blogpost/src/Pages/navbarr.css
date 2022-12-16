@@ -97,3 +97,11 @@ button {
     background-color: transparent;
   }
 }
+@media (max-width: 620px) {
+  .mainBoxFilter {
+    z-index: 10;
+  }
+  .BlogListingPage{
+    width: 100%;
+  }
+}

@@ -153,7 +153,7 @@ export const SignUp = () => {
               fontWeight={"600"}
               marginRight={{ base: "25%", lg: "45%" }}
             >
-              Already a Users?
+              Already a User?
             </Text>
             <Link
               fontSize={"19px"}
