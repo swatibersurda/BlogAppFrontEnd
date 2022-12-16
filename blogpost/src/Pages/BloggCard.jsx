@@ -1,5 +1,6 @@
 import { Box,Divider,Heading,Image,Text } from "@chakra-ui/react"
 export const BloggCard=({item})=>{
+  
     return(
         <Box width="100%" border="1px solid transparent" maxH={"auto"} display={{md:"dispaly",sm:"dispaly",md:"flex",lg:"flex"}} marginBottom="2%"
          boxShadow= {`rgba(0, 0, 0, 0.24) 0px 3px 8px`}
