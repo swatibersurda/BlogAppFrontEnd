@@ -1,6 +1,6 @@
-# BlogAppFrontEnd
-# Dish Polling App
-This App is Based on a Dish polled by users he/she needs to select the top three dishes from the selection provided.
+# SBBlog 
+
+This is a blog website where user can read,edit,delete and post blogs.
 
 ## Tech Stack :
 The following is the tech stack I used to build this website:-
