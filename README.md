@@ -27,12 +27,12 @@ This is the Landing page of the website where users can read all the blogs poste
 ![Blog_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/homeblog.PNG?raw=true)
  
  ## Filter By Category
-Using this feature users can filter the blogs based on their category.
+Using this feature users can filter the blogs based on their category,filtering is done from backend.
 
 ![Filters_Category](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/Differntfilter1blog.PNG?raw=true)
  
  ## Sort By Title
-Using this feature users can sort the blogs based on its title.
+Using this feature users can sort the blogs based on its title sorting is done from backend.
 ![Sort_Title](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/filterandsort.PNG?raw=true)
  
 ## BlogDetails Page :
